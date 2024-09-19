@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Mereka</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .testimonials {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1a605c;
+        }
+
+        .carousel-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            background-color: #2f7e6e;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #1a605c;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .testimonial-text {
+            padding: 20px;
+            background-color: #2f7e6e;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .testimonial-text h5 {
+            margin-top: 15px;
+            color: white;
+        }
+
+        .testimonial-text span {
+            color: #ddd;
+            font-style: italic;
+        }
+
+        .carousel-item {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0.5; /* Transparansi default untuk semua slide */
+        }
+        
+        .carousel-item.active {
+            opacity: 1; /* Slide tengah memiliki opacity penuh */
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: rgba(0, 0, 0, 0.1); /* Transparansi panah */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Efek hover pada panah */
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section class="testimonials text-center">
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                    <h1 class="display-6 mb-5">Kata Mereka</h1>
+                    <hr size="4px" style="color: var(--dark);">
+                </div>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="https://sekolahsabilillah.sch.id/public/img/testimoni/muhajjir.jpg" style="width: 100px; height: 100px;">
+                                <div class="testimonial-text">
+                                    <p>“Penyemaian karakter di Lembaga pendidikan Islam Sabilillah Malang dengan mengedepankan komitmen keislaman, yakni komitmen kebangsaan serta kecendekiaannya, saya optimis akan berhasil dengan baik dan semoga menginspirasi lembaga-lembaga pendidikan yang lain”</p>
+                                    <h5>Prof. Dr. Muhadjir Effendy, MAP</h5>
+                                    <span>Menteri Pendidikan dan Kebudayaan Republik Indonesia Periode 2016-2019</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="https://sekolahsabilillah.sch.id/public/img/testimoni/walikota (1).jpg" style="width: 100px; height: 100px;">
+                                <div class="testimonial-text">
+                                    <p>“Lembaga Pendidikan Sabilillah telah sukses dalam menerapkan inovasi dan kreatifitas yang dapat digunakan dalam menunjang proses belajar mengajar khususnya untuk menghadapi era milenial dan revolusi industri 4.0.”</p>
+                                    <h5>Drs. H. Sutiaji</h5>
+                                    <span>Walikota Malang</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tambahkan testimonial lainnya sesuai kebutuhan -->
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
