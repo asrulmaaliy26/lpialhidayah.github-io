@@ -109,6 +109,28 @@
             }
         }
     });
+    
+    // berita carousel
+    $('.berita-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        navText: ["<div class='owl-prev'>Prev</div>", "<div class='owl-next'>Next</div>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            992: {
+                items: 3
+            }
+        }
+    });
 
 
     // Facts counter

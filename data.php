@@ -33,10 +33,35 @@ class HomepageController
         return $this->fetchData('/categories');
     }
 
+    public function getOneCategory($id)
+    {
+        $categoryData = $this->fetchData("/categories/{$id}");
+
+        
+        if (isset($categoryData['category_name'])) {
+            return $categoryData['category_name'];  
+        }
+
+        return null;  
+    }
+
+
     // Method untuk mendapatkan jenis
     public function getJenis()
     {
         return $this->fetchData('/jenises');
+    }
+
+    public function getOneJenis($id)
+    {
+        $jenisData = $this->fetchData("/jenises/{$id}");
+
+        
+        if (isset($jenisData['jenis_name'])) {
+            return $jenisData['jenis_name'];  
+        }
+
+        return null;  
     }
 
     // Method untuk mendapatkan pendidikan
@@ -45,10 +70,34 @@ class HomepageController
         return $this->fetchData('/pendidikans');
     }
 
+    public function getOnePendidikan($id)
+    {
+        $pendidikanData = $this->fetchData("/pendidikans/{$id}");
+
+        
+        if (isset($pendidikanData['pendidikan_name'])) {
+            return $pendidikanData['pendidikan_name'];  
+        }
+
+        return null;  
+    }
+
     // Method untuk mendapatkan tingkat
     public function getTingkat()
     {
         return $this->fetchData('/tingkats');
+    }
+
+    public function getOneTingkat($id)
+    {
+        $tingkatData = $this->fetchData("/tingkats/{$id}");
+
+        
+        if (isset($tingkatData['tingkat_name'])) {
+            return $tingkatData['tingkat_name'];  
+        }
+
+        return null;  
     }
 
     // Method untuk mendapatkan artikel berdasarkan satu tipe
@@ -112,10 +161,10 @@ class HomepageController
     {
         return $this->fetchData("/article/{$slug}");
     }
-
 }
 
-function truncateText($text, $maxLength) {
+function truncateText($text, $maxLength)
+{
     return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
 }
 

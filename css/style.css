@@ -255,7 +255,7 @@
     
     .sticky-top.navbar-light {
         position: fixed;
-        background: var(--bs-light);
+        background: #DDDDDD;
     }
 
     .navbar-light .navbar-nav .nav-link::before {
@@ -396,19 +396,20 @@
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
+    
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/carousel-1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://admin.maalhidayahkauman.sch.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 140px 0 60px 0;
+    padding: 270px 0 60px 0;
     transition: 0.5s;
 }
 
 @media (min-width: 992px) {
     .bg-breadcrumb {
-        padding: 140px 0 60px 0;
+        padding: 270px 0 60px 0;
     }
 }
 
@@ -428,18 +429,18 @@
 /*** Single Page Hero Header End ***/
 
 
-/*** Service Start ***/
-.service .service-item {
+/*** berita Start ***/
+.berita .berita-item {
     background: var(--bs-light);
     border-radius: 10px;
     transition: 0.5s;
 }
 
-.service .service-item:hover {
+.berita .berita-item:hover {
     box-shadow: 0 0 45px rgba(0, 0, 0, .2);
 }
 
-.service .service-item .service-img {
+.berita .berita-item .berita-img {
     position: relative;
     overflow: hidden;
     border-top-left-radius: 10px;
@@ -447,13 +448,40 @@
     transition: 0.5s;
 }
 
-.service .service-item .service-img img {
+.berita .berita-item .berita-img img {
     transition: 0.5s;
 }
 
-.service .service-item:hover .service-img img {
+.berita .berita-item:hover .berita-img img {
     transform: scale(1.2);
 }
+
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-item .page-link {
+    border-radius: 50px;
+    /* background-color: var(--bs-primary); */
+    padding: 10px 20px;
+    /* color: var(--bs-light); */
+}
+
+.pagination .page-item:first-child {
+    margin-right: auto;
+}
+
+.pagination .page-item:last-child {
+    margin-left: auto;
+}
+
 /*** Service End ***/
 
 
@@ -980,8 +1008,9 @@
 }
 
 
+/* Kata Mereka */
 
-.testimonials {
+.katamerekas {
     padding: 50px 0;
 }
 
@@ -1012,19 +1041,19 @@
     padding: 10px;
 }
 
-.testimonial-text {
+.katamereka-text {
     padding: 20px;
     background-color: #2f7e6e;
     color: white;
     border-radius: 10px;
 }
 
-.testimonial-text h5 {
+.katamereka-text h5 {
     margin-top: 15px;
     color: white;
 }
 
-.testimonial-text span {
+.katamereka-text span {
     color: #ddd;
     font-style: italic;
 }
@@ -1038,23 +1067,85 @@
     opacity: 1; /* Slide tengah memiliki opacity penuh */
 }
 
+
+/* Custom Arrows */
 .carousel-control-prev,
 .carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.1); /* Transparansi panah */
+    width: 60px;
+    height: 60px;
+    background-color: rgba(26, 96, 92, 0.2);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: rgba(0, 0, 0, 0.2); /* Efek hover pada panah */
+    background-color: rgba(26, 96, 92, 0.5);
+}
+
+.carousel-control-prev .fa-arrow-left,
+.carousel-control-next .fa-arrow-right {
+    color: #2f7e6e;
+    font-size: 1.5rem;
+}
+
+.carousel-control-prev:hover .fa-arrow-left,
+.carousel-control-next:hover .fa-arrow-right {
+    color: #1a605c;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(100%);
+    display: none; /* Hide default icons */
 }
+
+
+.marquee-wrapper {
+    width: 90%; /* Kurangi lebar */
+    overflow: hidden;
+    margin: 0 auto; /* Taruh di tengah */
+    position: relative;
+  }
+  
+  .marquee {
+    display: flex;
+    justify-content: space-between; /* Spasi merata di antara gambar */
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite; /* Durasi animasi */
+  }
+  
+  .marquee img {
+    margin: 0 50px; /* Jarak antar gambar */
+    height: 120px; /* Ukuran gambar */
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%); /* Mulai dari posisi penuh */
+    }
+    100% {
+      transform: translateX(-100%); /* Berakhir saat gambar hilang sepenuhnya */
+    }
+  }
+  
+
+  .background-section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .background-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi 50% */
+    z-index: -1; /* Lapisan ini berada di bawah konten */
+  }
+
