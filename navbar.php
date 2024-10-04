@@ -13,7 +13,7 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-center">
-                <p class="text-black me-2 mt-3">Follow Us:</p>
+                <p class="text-black me-2 mt-3">Hubungi Kami:</p>
                 <div class="d-flex justify-content-center ms-2">
                     <a class="btn btn-md-square btn-light rounded-circle me-2"
                         href="https://www.facebook.com/Alhidayah.20"><i class="fab fa-facebook-f"></i></a>
