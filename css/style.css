@@ -1149,3 +1149,14 @@
     z-index: -1; /* Lapisan ini berada di bawah konten */
   }
 
+
+  .custom-select-arrow select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 3.451 6.448c-.566-.686-.106-1.648.753-1.648h7.592c.86 0 1.32.962.753 1.648l-3.796 4.692a1 1 0 0 1-1.506 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    padding-right: 2.5rem; /* Adjust spacing to make room for arrow */
+}

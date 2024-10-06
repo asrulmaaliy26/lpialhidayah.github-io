@@ -161,6 +161,28 @@ class HomepageController
     {
         return $this->fetchData("/article/{$slug}");
     }
+    function sendContactData($contactData) {
+        $url = 'https://admin.maalhidayahkauman.sch.id/api/contact';
+        // $url = 'http://127.0.0.1:8000/api/contact';
+        
+        $options = [
+            'http' => [
+                'header'  => "Content-type: application/json\r\n",
+                'method'  => 'POST',
+                'content' => json_encode($contactData),
+            ],
+        ];
+
+        
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+
+        if ($result === FALSE) {
+            die('Error occurred');
+        }
+        
+        return json_decode($result);
+    }   
 }
 
 function truncateText($text, $maxLength)

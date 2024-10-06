@@ -3,12 +3,12 @@
     <div class="row gx-0 align-items-center">
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-flex flex-wrap">
-                <a href="contact.php" class="text-muted small me-4"><i
+                <a href="https://www.google.com/maps?ll=-8.056043,111.86642&z=16&t=m&hl=id&gl=ID&mapclient=embed&cid=16940846402841777619" class="text-muted small me-4"><i
                         class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
                 <a href="https://wa.me/+6282234639615" class="text-muted small me-4"><i
                         class="fas fa-phone-alt text-primary me-2"></i>+6282234639615</a>
-                <a href="404.php" class="text-muted small me-0"><i
-                        class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                <a href="contact.php" class="text-muted small me-0"><i
+                        class="fas fa-envelope text-primary me-2"></i>lpialhidayakauman@gmail.com</a>
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
@@ -66,7 +66,7 @@
                 <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'SMP' ? 'active' : ''; ?>">SMP</a>
                 <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'madin' ? 'active' : ''; ?>">MADIN</a>
                 <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">TPQ</a>
-                <a href="contact.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">Hubungi Kami</a>
+                <a href="contact.php" class="nav-item nav-link <?php echo $current_page == 'contact' ? 'active' : ''; ?>">Hubungi Kami</a>
             </div>
             <a href="https://ppdb.almannan.id/"
                 class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">PPDB</a>

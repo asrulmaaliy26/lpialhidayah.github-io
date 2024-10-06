@@ -1,168 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Stocker - Stock Market Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Stocker - Stock Market Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-<?php include 'navbar.php' ?>
+    <?php include 'navbar.php' ?>
+    <?php include 'data.php' ?>
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <!-- Pesan akan diganti secara dinamis dengan PHP -->
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        $contactData = [
+                            'contact_id' => 1,
+                            'name' => $_POST['name'],
+                            'email' => $_POST['email'],
+                            'pendidikan' => $_POST['pendidikan'],
+                            'subject' => $_POST['subject'],
+                            'message' => $_POST['message'],
+                            'created_at' => date('Y-m-d\TH:i:s.000  000Z'),
+                            'updated_at' => date('Y-m-d\TH:i:s.000000Z'),
+                        ];
 
-            <!-- Header Start -->
-            <div class="container-fluid bg-breadcrumb">
-                <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Hubungi Kami</h4>
-                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">LPI</a></li>
-                        <li class="breadcrumb-item active text-primary">Contact</li>
-                    </ol>    
+                        $response = $controller->sendContactData($contactData);
+                        if ($response) {
+                            echo 'Pesan berhasil dikirim!';
+                        } else {
+                            echo 'Terjadi kesalahan, silakan coba lagi.';
+                        }
+                    }
+                    ?>
                 </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
-            <!-- Header End -->
         </div>
-        <!-- Navbar & Hero End -->
+    </div>
 
-        <!-- Contact Start -->
-        <div class="container-fluid contact py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-xl-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="bg-light rounded p-5 mb-5">
-                                <h4 class="text-primary mb-4">Get in Touch</h4>
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fas fa-map-marker-alt fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Address</h4>
-                                                <p class="mb-0">123 Street New York.USA</p>
-                                            </div>
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Hubungi Kami</h4>
+            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">LPI</a></li>
+                <li class="breadcrumb-item active text-primary">Contact</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid contact py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="bg-light rounded p-5 mb-5">
+                            <h4 class="text-primary mb-4">Menghubungi</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="contact-add-item">
+                                        <div class="contact-icon text-primary mb-4">
+                                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Alamat</h4>
+                                            <p class="mb-0">Jl. KH Hasyim Asyari No.54, Kauman, Kec. Kauman, Kabupaten Tulungagung, Jawa Timur 66261</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fas fa-envelope fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Mail Us</h4>
-                                                <p class="mb-0">info@example.com</p>
-                                            </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-add-item">
+                                        <div class="contact-icon text-primary mb-4">
+                                            <i class="fas fa-envelope fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Kirim Email Ke</h4>
+                                            <p class="mb-0">lpialhidayahkauman@gmail.com</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fa fa-phone-alt fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Telephone</h4>
-                                                <p class="mb-0">(+012) 3456 7890</p>
-                                            </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-add-item">
+                                        <div class="contact-icon text-primary mb-4">
+                                            <i class="fa fa-phone-alt fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Telephone</h4>
+                                            <p class="small"><a href="https://wa.me/+6282234639615">(0822) 34639615</a></p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fab fa-firefox-browser fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Yoursite@ex.com</h4>
-                                                <p class="mb-0">(+012) 3456 7890</p>
-                                            </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-add-item">
+                                        <div class="contact-icon text-primary mb-4">
+                                            <i class="fab fa-firefox-browser fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h4>Jadwal Aktif Kunjung</h4>
+                                            <p class="small">Senin - Jumat: 7:00 - 16:00</p>
+                                            <p class="small">Sabtu: 8:00 - 12:00</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
-                                <h4 class="text-primary">Send Your Message</h4>
-                                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                                <form>
-                                    <div class="row g-4">
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                                <label for="name">Your Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                                <label for="email">Your Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="phone" class="form-control border-0" id="phone" placeholder="Phone">
-                                                <label for="phone">Your Phone</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="project" placeholder="Project">
-                                                <label for="project">Your Project</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                                <label for="subject">Subject</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
-                                                <label for="message">Message</label>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3">Send Message</button>
+                        </div>
+                        <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
+                            <h4 class="text-primary">Kirim Pesan Anda di Sini</h4>
+                            <p class="mb-4">Silakan isi formulir di bawah ini untuk pertanyaan atau bantuan lebih lanjut. Kami akan segera menanggapi pesan Anda. Terima kasih.</p>
+                            <form method="POST" action="">
+                                <div class="row g-4">
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control border-0" id="name" name="name" placeholder="Nama Anda">
+                                            <label for="name">Nama Lengkap</label>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control border-0" id="email" name="email" placeholder="Email Anda">
+                                            <label for="email">Alamat Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <label for="phone">Tingkat Pendidikan :</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating custom-select-arrow">
+                                            <select class="form-control border-0" id="pendidikan" name="pendidikan">
+                                                <option value="smp">SMP</option>
+                                                <option value="ma">MA</option>
+                                                <option value="tpg">TPQ</option>
+                                                <option value="mahad">PONDOK</option>
+                                                <option value="kampus">KAMPUS</option>
+                                            </select>
+                                            <label for="project">Pendidikan</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control border-0" id="subject" name="subject" placeholder="Subjek">
+                                            <label for="subject">Subjek Pengaduan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control border-0" placeholder="Tulis pesan Anda di sini" id="message" name="message"  style="height: 160px"></textarea>
+                                            <label for="message">Pesan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3">Kirim Pesan</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+
                     </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="rounded h-100">
-                            <iframe class="rounded h-100 w-100" 
-                            style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="rounded h-100">
+                        <iframe class="rounded h-100 w-100"
+                            style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15801.777997849458!2d111.8664144!3d-8.0560593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78e300c4156a41%3A0xeb19fa0c03d695d3!2sMA%20AL%20HIDAYAH!5e0!3m2!1sid!2sid!4v1723621722673!5m2!1sid!2sid"
                             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
-<?php include 'footer.php' ?>
+    </div>
+    <script>
+        // Tampilkan toast setelah form dikirim
+        window.onload = function() {
+            <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+                var toastElement = document.getElementById('liveToast');
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            <?php endif; ?>
+        };
+    </script>
+    <!-- Contact End -->
+    <?php include 'footer.php' ?>

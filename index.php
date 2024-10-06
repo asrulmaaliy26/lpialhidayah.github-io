@@ -257,7 +257,7 @@
 
 
     <!-- Offer Start -->
-    <div class="container-fluid offer-section pb-5">
+    <div class="container-fluid offer-section py-5">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Our Offer</h4>
