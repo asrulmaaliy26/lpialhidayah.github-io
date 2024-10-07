@@ -162,12 +162,14 @@
                                     </div>
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating custom-select-arrow">
+                                            <?php
+                                            $apiUrl = 'https://admin.maalhidayahkauman.sch.id/api/pendidikans';
+                                            $pendidikanData = json_decode(file_get_contents($apiUrl), true);
+                                            ?>
                                             <select class="form-control border-0" id="pendidikan" name="pendidikan">
-                                                <option value="smp">SMP</option>
-                                                <option value="ma">MA</option>
-                                                <option value="tpg">TPQ</option>
-                                                <option value="mahad">PONDOK</option>
-                                                <option value="kampus">KAMPUS</option>
+                                                <?php foreach ($pendidikanData as $pendidikan): ?>
+                                                    <option value="<?= $pendidikan['pendidikan_slug']; ?>"><?= $pendidikan['pendidikan_name']; ?></option>
+                                                <?php endforeach; ?>
                                             </select>
                                             <label for="project">Pendidikan</label>
                                         </div>
@@ -181,7 +183,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control border-0" placeholder="Tulis pesan Anda di sini" id="message" name="message"  style="height: 160px"></textarea>
+                                            <textarea class="form-control border-0" placeholder="Tulis pesan Anda di sini" id="message" name="message" style="height: 160px"></textarea>
                                             <label for="message">Pesan</label>
                                         </div>
                                     </div>

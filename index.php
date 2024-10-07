@@ -63,9 +63,9 @@
                                     guru guru madrasah ....
                                 </p>
                                 <div class="d-flex justify-content-center flex-shrink-0 mb-5 p-2">
-                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="404.php"><i
+                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="detail.php?id=38"><i
                                             class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                    <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="404.php">Learn
+                                    <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="detail.php?id=38">Learn
                                         More</a>
                                 </div>
 
@@ -92,9 +92,9 @@
                                 </p>
                                 <div
                                     class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-5 p-2">
-                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="404.php"><i
+                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="detail.php?id=31"><i
                                             class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                    <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="404.php">Learn
+                                    <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="detail.php?id=31">Learn
                                         More</a>
                                 </div>
                             </div>
@@ -428,20 +428,20 @@
             <div class="marquee-wrapper wow fadeIn" data-wow-delay="0.2s">
                 <div class="marquee">
                     <!-- Masukkan gambar atau logo di sini dan gandakan untuk efek infinite loop -->
-                    <img src="images/logolpi.png" alt="Logo 1">
-                    <img src="images/logolpi.png" alt="Logo 2">
-                    <img src="images/logolpi.png" alt="Logo 3">
-                    <img src="images/logolpi.png" alt="Logo 4">
-                    <img src="images/logolpi.png" alt="Logo 5">
-                    <img src="images/logolpi.png" alt="Logo 6">
+                    <img src="images/LOGOLPI.png" alt="Logo 1">
+                    <img src="images/LOGOLPI.png" alt="Logo 2">
+                    <img src="images/LOGOLPI.png" alt="Logo 3">
+                    <img src="images/LOGOLPI.png" alt="Logo 4">
+                    <img src="images/LOGOLPI.png" alt="Logo 5">
+                    <img src="images/LOGOLPI.png" alt="Logo 6">
 
                     <!-- Duplikat gambar untuk menghindari jeda animasi -->
-                    <img src="images/logolpi.png" alt="Logo 1">
-                    <img src="images/logolpi.png" alt="Logo 2">
-                    <img src="images/logolpi.png" alt="Logo 3">
-                    <img src="images/logolpi.png" alt="Logo 4">
-                    <img src="images/logolpi.png" alt="Logo 5">
-                    <img src="images/logolpi.png" alt="Logo 6">
+                    <img src="images/LOGOLPI.png" alt="Logo 1">
+                    <img src="images/LOGOLPI.png" alt="Logo 2">
+                    <img src="images/LOGOLPI.png" alt="Logo 3">
+                    <img src="images/LOGOLPI.png" alt="Logo 4">
+                    <img src="images/LOGOLPI.png" alt="Logo 5">
+                    <img src="images/LOGOLPI.png" alt="Logo 6">
                 </div>
             </div>
         </div>
