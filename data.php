@@ -27,7 +27,6 @@ class HomepageController
         return $this->fetchArticleBySlug($slug);
     }
 
-    // Method untuk mendapatkan kategori
     public function getCategory()
     {
         return $this->fetchData('/categories');

@@ -32,8 +32,8 @@
 
 <body>
   <?php
-  include 'navbar.php';
-  include 'data.php';
+  require 'navbar.php';
+  require 'data.php';
 
   // Mengambil ID dari URL
   $post_id = isset($_GET['id']) ? intval($_GET['id']) : null;
@@ -41,7 +41,7 @@
   // Memeriksa apakah post_id ada
   if (!$post_id) {
     echo "<p>ID tidak ditemukan.</p>";
-    include 'footer.php';
+    require 'footer.php';
     exit();
   }
 
@@ -52,13 +52,13 @@
   } catch (\Exception $e) {
     $error_message = 'Error: ' . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
     echo "<p>{$error_message}</p>";
-    include 'footer.php';
+    require 'footer.php';
     exit();
   }
 
   if (!$post) {
     echo "<p>Post tidak ditemukan.</p>";
-    include 'footer.php';
+    require 'footer.php';
     exit();
   }
   ?>
@@ -124,4 +124,4 @@
     </div>
   </div>
 
-  <?php include 'footer.php'; ?>
+  <?php require 'footer.php'; ?>

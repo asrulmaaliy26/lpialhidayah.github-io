@@ -36,7 +36,7 @@
 <body>
 
 
-    <?php include 'navbar.php' ?>
+    <?php require 'navbar.php' ?>
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
@@ -62,8 +62,9 @@
     $offset = ($current_page - 1) * $posts_per_page;
 
     // Mendapatkan semua post dan menyortirnya secara ascending berdasarkan ID
-    $articlesMA = $controller->getArticleByOneTypes('pendidikan', '3');
+    $articlesMA = $controller->index();
     $getCategiry = $controller->getCategory();
+    $getPendidikans = $controller->getPendidikan();
 
     // Mendapatkan jumlah total post
     $total_posts = count($articlesMA);
@@ -155,7 +156,7 @@
 
                 <div class="row py-4 wow fadeInUp" data-wow-delay="0.4s">
                     <table class="table table-hover mt-3">
-                        <h3>Kategori Menarik</h3>
+                        <h3 class="text-center">Kategori</h3>
                         <thead>
                             <tr>
                                 <th scope="col"></th>
@@ -166,7 +167,7 @@
                                 <?php foreach ($getCategiry as $category): ?>
                                     <tr class="category-row">
                                         <td style="text-align: center;">
-                                            <a href="category.php?id=<?php echo htmlspecialchars($category['category_id'], ENT_QUOTES, 'UTF-8'); ?>" class="category-link text-decoration-none">
+                                            <a href="beritacategory.php?id=<?php echo htmlspecialchars($category['category_id'], ENT_QUOTES, 'UTF-8'); ?>" class="category-link text-decoration-none">
                                                 <?php echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8'); ?>
                                             </a>
                                         </td>
@@ -179,6 +180,52 @@
                             <?php endif; ?>
                         </tbody>
                     </table>
+                </div>
+                <div class="row py-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <table class="table table-hover mt-3">
+                        <h3 class="text-center">Pendidikan</h3>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if (!empty($getPendidikans)): ?>
+                                <?php foreach ($getPendidikans as $pend): ?>
+                                    <tr class="category-row">
+                                        <td style="text-align: center;">
+                                            <?php if (strtolower($pend['pendidikan_name']) === 'kampus'): ?>
+                                                <!-- Jika nama pendidikan 'kampus', arahkan ke afiliasikampus.php -->
+                                                <a href="afiliasikampus.php" class="pendidikan-link text-decoration-none">
+                                                    <?php echo htmlspecialchars($pend['pendidikan_name'], ENT_QUOTES, 'UTF-8'); ?>
+                                                </a>
+                                            <?php elseif (strtolower($pend['pendidikan_name']) === 'ma'): ?>
+                                                <!-- Jika nama pendidikan 'ma', arahkan ke maalhidayahkauman.sch.id -->
+                                                <a href="https://maalhidayahkauman.sch.id/berita.php" class="pendidikan-link text-decoration-none">
+                                                    <?php echo htmlspecialchars($pend['pendidikan_name'], ENT_QUOTES, 'UTF-8'); ?>
+                                                </a>
+                                            <?php elseif (strtolower($pend['pendidikan_name']) === 'umum'): ?>
+                                                <!-- Jika nama pendidikan 'ma', arahkan ke maalhidayahkauman.sch.id -->
+                                                <a href="" class="pendidikan-link text-decoration-none" target="_blank">
+                                                    <?php echo htmlspecialchars($pend['pendidikan_name'], ENT_QUOTES, 'UTF-8'); ?>
+                                                </a>
+                                            <?php else: ?>
+                                                <!-- Untuk pendidikan lain, gunakan nama file sesuai dengan pendidikan -->
+                                                <a href="<?php echo strtolower($pend['pendidikan_name']); ?>.php" class="pendidikan-link text-decoration-none">
+                                                    <?php echo htmlspecialchars($pend['pendidikan_name'], ENT_QUOTES, 'UTF-8'); ?>
+                                                </a>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td style="text-align: center;">No categories available.</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+
                 </div>
                 <div class="row pt-4 wow fadeInUp" data-wow-delay="0.2s">
                     <h2>Berita Terbaru</h2>
@@ -214,4 +261,4 @@
 
         </div>
     </div>
-    <?php include 'footer.php' ?>
+    <?php require 'footer.php' ?>

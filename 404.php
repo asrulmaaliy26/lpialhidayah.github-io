@@ -32,7 +32,7 @@
 
     <body>
 
-        <?php include 'navbar.php' ?>
+        <?php require 'navbar.php' ?>
 
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">

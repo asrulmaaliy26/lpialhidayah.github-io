@@ -44,7 +44,19 @@
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
     ?>
-    <?php include 'navbar.php' ?>
+    
+    
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    
+    <?php require 'navbar.php' ?>
 
     <!-- Carousel Start -->
     <div class="header-carousel owl-carousel">
@@ -307,9 +319,8 @@
     </div>
     <!-- Offer End -->
 
-
     <!-- Blog Start -->
-    <div class="container-fluid blog py-5" style="background-color:#343a40;">
+    <div class="container-fluid blog py-4" style="background-color:#343a40;">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Our Blog & News</h4>
@@ -347,8 +358,6 @@
         </div>
     </div>
     <!-- Blog End -->
-
-
 
     <section class="testimonials text-center">
         <!-- Testimonial Start -->
@@ -447,4 +456,4 @@
         </div>
     </div>
 
-    <?php include 'footer.php' ?>
+    <?php require 'footer.php' ?>

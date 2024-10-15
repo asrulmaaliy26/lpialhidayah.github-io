@@ -61,11 +61,11 @@
                 </div>
 
                 <a href="berita.php" class="nav-item nav-link <?php echo $current_page == 'berita' ? 'active' : ''; ?>">Berita</a>
-                <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'kampus' ? 'active' : ''; ?>">Afiliasi Kampus</a>
+                <a href="afiliasikampus.php" class="nav-item nav-link <?php echo $current_page == 'afiliasikampus' ? 'active' : ''; ?>">Afiliasi Kampus</a>
                 <a href="https://maalhidayahkauman.sch.id/" class="nav-item nav-link <?php echo $current_page == 'MA' ? 'active' : ''; ?>">MA</a>
-                <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'SMP' ? 'active' : ''; ?>">SMP</a>
-                <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'madin' ? 'active' : ''; ?>">MADIN</a>
-                <a href="404.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">TPQ</a>
+                <a href="smp.php" class="nav-item nav-link <?php echo $current_page == 'smp' ? 'active' : ''; ?>">SMP</a>
+                <a href="mahad.php" class="nav-item nav-link <?php echo $current_page == 'mahad' ? 'active' : ''; ?>">MAHAD</a>
+                <a href="tpq.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">TPQ</a>
                 <a href="contact.php" class="nav-item nav-link <?php echo $current_page == 'contact' ? 'active' : ''; ?>">Hubungi Kami</a>
             </div>
             <a href="https://ppdb.almannan.id/"

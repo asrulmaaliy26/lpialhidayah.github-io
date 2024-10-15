@@ -32,8 +32,8 @@
 
 <body>
 
-    <?php include 'navbar.php' ?>
-    <?php include 'data.php' ?>
+    <?php require 'navbar.php' ?>
+    <?php require 'data.php' ?>
     <!-- Toast Container -->
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="liveToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
@@ -217,4 +217,4 @@
         };
     </script>
     <!-- Contact End -->
-    <?php include 'footer.php' ?>
+    <?php require 'footer.php' ?>

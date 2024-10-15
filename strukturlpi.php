@@ -36,7 +36,7 @@
 <body>
 
 
-    <?php include 'navbar.php' ?>
+    <?php require 'navbar.php' ?>
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
@@ -69,4 +69,4 @@
         </div>
     </section>
 
-    <?php include 'footer.php' ?>
+    <?php require 'footer.php' ?>

@@ -36,7 +36,7 @@
 <body>
 
 
-    <?php include 'navbar.php' ?>
+    <?php require 'navbar.php' ?>
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
@@ -51,7 +51,7 @@
     <!-- Navbar & Hero End -->
 
     <?php
-    include 'data.php';
+    require 'data.php';
 
     // Mengambil artikel berdasarkan kategori, pendidikan, dan tingkat
     $articlesMATingkatkecamatan = $controller->getArticleByThreeTypes('Category', '3', 'pendidikan', '3', 'tingkat', '2');
@@ -201,4 +201,4 @@
     </div>
     <!-- akhir section -->
 
-    <?php include 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
