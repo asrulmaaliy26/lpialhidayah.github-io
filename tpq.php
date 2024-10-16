@@ -181,7 +181,7 @@
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
 
-    if (empty($posts_on_current_page)) {
+    if ($total_posts == 1) {
         echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
         require 'footer.php';
         exit();
