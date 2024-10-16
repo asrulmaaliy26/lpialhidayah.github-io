@@ -335,7 +335,7 @@
                             <div class="blog-img mb-4">
                                 <img src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid w-100 rounded" alt="">
                                 <div class="blog-title">
-                                    <a href="404.php" class="btn"><?php echo $controller->getOneCategory($post['category_id']) ?></a>
+                                    <a href="beritacategory.php?id=<?= $post['category_id'] ?>" class="btn"><?php echo $controller->getOneCategory($post['category_id']) ?></a>
                                 </div>
                             </div>
                             <a href="404.php" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>

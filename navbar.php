@@ -62,7 +62,7 @@
 
                 <a href="berita.php" class="nav-item nav-link <?php echo $current_page == 'berita' ? 'active' : ''; ?>">Berita</a>
                 <a href="afiliasikampus.php" class="nav-item nav-link <?php echo $current_page == 'afiliasikampus' ? 'active' : ''; ?>">Afiliasi Kampus</a>
-                <a href="https://maalhidayahkauman.sch.id/" class="nav-item nav-link <?php echo $current_page == 'MA' ? 'active' : ''; ?>">MA</a>
+                <a href="https://maalhidayahkauman.sch.id/" class="nav-item nav-link <?php echo $current_page == 'MA' ? 'active' : ''; ?>" target="_blank">MA</a>
                 <a href="smp.php" class="nav-item nav-link <?php echo $current_page == 'smp' ? 'active' : ''; ?>">SMP</a>
                 <a href="mahad.php" class="nav-item nav-link <?php echo $current_page == 'mahad' ? 'active' : ''; ?>">MAHAD</a>
                 <a href="tpq.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">TPQ</a>

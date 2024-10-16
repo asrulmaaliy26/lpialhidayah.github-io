@@ -53,6 +53,8 @@
     // Menentukan jumlah post per halaman
     $posts_per_page = 6;
 
+    $category_id = $post_id;
+
     // Mendapatkan halaman saat ini dari query string, default ke halaman 1 jika tidak ada
     $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -60,8 +62,8 @@
     $offset = ($current_page - 1) * $posts_per_page;
 
     // Mendapatkan semua post dan menyortirnya secara ascending berdasarkan ID
-    $articlesCategory = $controller->getArticleByOneTypes('category', $post_id);
-    $getCategory = $controller->getOneCategory($post_id);
+    $articlesCategory = $controller->getArticleByOneTypes('category', $category_id);
+    $getCategory = $controller->getOneCategory($category_id);
 
     // Mendapatkan jumlah total post
     $total_posts = count($articlesCategory);
@@ -90,7 +92,7 @@
 
     <?php
 
-    if (!empty($posts_on_current_page)) {
+    if (empty($posts_on_current_page)) {
         echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
         require 'footer.php';
         exit();
