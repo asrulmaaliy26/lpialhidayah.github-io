@@ -135,9 +135,11 @@ class HomepageController
         $response = curl_exec($ch);
 
         if (curl_errno($ch)) {
-            throw new \Exception('cURL Error: ' . curl_error($ch));
+            // Menghentikan eksekusi dan menampilkan halaman 404.php
+            header("Location: /404.php");
+            exit();
         }
-
+        
         curl_close($ch);
 
         // Debug output

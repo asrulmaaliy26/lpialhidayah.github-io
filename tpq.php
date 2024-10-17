@@ -166,6 +166,7 @@
     $articlesMA = $controller->getArticleByOneTypes('pendidikan', '5');
     $getCategiry = $controller->getCategory();
 
+
     // Mendapatkan jumlah total post
     $total_posts = count($articlesMA);
 
@@ -180,8 +181,9 @@
     {
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
-
-    if ($total_posts == 1) {
+    // Memeriksa apakah ada error dalam array articlesMA
+    if (isset($articlesMA['error'])) {
+        // Menampilkan pesan error jika ditemukan
         echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
         require 'footer.php';
         exit();

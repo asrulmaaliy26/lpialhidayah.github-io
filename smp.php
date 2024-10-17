@@ -184,12 +184,13 @@
     {
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
-    
-    if ($total_posts == 1) {
-        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
-        require 'footer.php';
-        exit();
-    }
+    // Memeriksa apakah ada error dalam array articlesMA
+if (isset($articlesMA['error'])) {
+    // Menampilkan pesan error jika ditemukan
+    echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
+    require 'footer.php';
+    exit();
+}
     ?>
 
     <div class="container-fluid berita py-5">
