@@ -11,13 +11,33 @@ class HomepageController
     }
 
     // Method untuk mendapatkan artikel dengan pagination
+    // public function getArticlesPaginasi($total)
+    // {
+    //     $response = $this->fetchData("/articles/{$total}/paginasi");
+    //     // Memeriksa apakah data berisi atribut 'data' yang merupakan array artikel
+    //     if (isset($response['data']) && is_array($response['data'])) {
+    //         return $response['data'];
+    //     }
+    //     throw new \Exception('Invalid data format received from API for paginated articles.');
+    // }
+
+    // Method untuk mendapatkan artikel dengan pagination dan sorting by created_at
     public function getArticlesPaginasi($total)
     {
         $response = $this->fetchData("/articles/{$total}/paginasi");
+
         // Memeriksa apakah data berisi atribut 'data' yang merupakan array artikel
         if (isset($response['data']) && is_array($response['data'])) {
-            return $response['data'];
+            $articles = $response['data'];
+
+            // Sorting articles berdasarkan created_at secara descending
+            usort($articles, function ($a, $b) {
+                return strtotime($b['created_at']) - strtotime($a['created_at']);
+            });
+
+            return $articles;
         }
+
         throw new \Exception('Invalid data format received from API for paginated articles.');
     }
 
@@ -36,12 +56,12 @@ class HomepageController
     {
         $categoryData = $this->fetchData("/categories/{$id}");
 
-        
+
         if (isset($categoryData['category_name'])) {
-            return $categoryData['category_name'];  
+            return $categoryData['category_name'];
         }
 
-        return null;  
+        return null;
     }
 
 
@@ -55,12 +75,12 @@ class HomepageController
     {
         $jenisData = $this->fetchData("/jenises/{$id}");
 
-        
+
         if (isset($jenisData['jenis_name'])) {
-            return $jenisData['jenis_name'];  
+            return $jenisData['jenis_name'];
         }
 
-        return null;  
+        return null;
     }
 
     // Method untuk mendapatkan pendidikan
@@ -73,12 +93,12 @@ class HomepageController
     {
         $pendidikanData = $this->fetchData("/pendidikans/{$id}");
 
-        
+
         if (isset($pendidikanData['pendidikan_name'])) {
-            return $pendidikanData['pendidikan_name'];  
+            return $pendidikanData['pendidikan_name'];
         }
 
-        return null;  
+        return null;
     }
 
     // Method untuk mendapatkan tingkat
@@ -91,12 +111,12 @@ class HomepageController
     {
         $tingkatData = $this->fetchData("/tingkats/{$id}");
 
-        
+
         if (isset($tingkatData['tingkat_name'])) {
-            return $tingkatData['tingkat_name'];  
+            return $tingkatData['tingkat_name'];
         }
 
-        return null;  
+        return null;
     }
 
     // Method untuk mendapatkan artikel berdasarkan satu tipe
@@ -139,7 +159,7 @@ class HomepageController
             header("Location: /404.php");
             exit();
         }
-        
+
         curl_close($ch);
 
         // Debug output
@@ -162,10 +182,11 @@ class HomepageController
     {
         return $this->fetchData("/article/{$slug}");
     }
-    function sendContactData($contactData) {
+    function sendContactData($contactData)
+    {
         $url = 'https://admin.maalhidayahkauman.sch.id/api/contact';
         // $url = 'http://127.0.0.1:8000/api/contact';
-        
+
         $options = [
             'http' => [
                 'header'  => "Content-type: application/json\r\n",
@@ -174,16 +195,16 @@ class HomepageController
             ],
         ];
 
-        
+
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
 
         if ($result === FALSE) {
             die('Error occurred');
         }
-        
+
         return json_decode($result);
-    }   
+    }
 }
 
 function truncateText($text, $maxLength)
