@@ -51,11 +51,10 @@
     </div>
     <!-- Header End -->
     </div>
-    <!-- Navbar & Hero End -->
+    <!-- Navbar & Hero End -->  
     <a href="https://ppdb.almannan.id/" style="text-decoration: none;">
-        <div style="width: 100%; height: 100px; background-color: #343a40; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
-            -- --> PPDB <-- --
-                </div>
+        <div style="width: 100%; height: 100px; background: url('images/ppdb.png') no-repeat center center; background-size: cover; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
+        </div>
     </a>
 
     <!-- Abvout Start -->
@@ -152,7 +151,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Features End -->
     <?php
     require 'data.php';
@@ -185,12 +184,12 @@
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
     // Memeriksa apakah ada error dalam array articlesMA
-if (isset($articlesMA['error'])) {
-    // Menampilkan pesan error jika ditemukan
-    echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
-    require 'footer.php';
-    exit();
-}
+    if (isset($articlesMA['error'])) {
+        // Menampilkan pesan error jika ditemukan
+        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
+        require 'footer.php';
+        exit();
+    }
     ?>
 
     <div class="container-fluid berita py-5">

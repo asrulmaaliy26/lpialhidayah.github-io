@@ -53,10 +53,10 @@
     <!-- Header End -->
     </div>
     <!-- Navbar & Hero End -->
+    
     <a href="https://ppdb.almannan.id/" style="text-decoration: none;">
-        <div style="width: 100%; height: 100px; background-color: #343a40; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
-            -- --> PPDB <-- --
-                </div>
+        <div style="width: 100%; height: 100px; background: url('images/ppdb.png') no-repeat center center; background-size: cover; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
+        </div>
     </a>
 
 
@@ -182,13 +182,96 @@
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
 
+    ?>
+    <style>
+        .contact-section {
+            padding: 40px 0;
+            background: #e2e2e2;
+        }
+
+        .contact-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-info h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            color: #6c757d;
+        }
+
+        .btn-contact {
+            background-color: #6200ee;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+
+        .btn-contact:hover {
+            background-color: #3700b3;
+        }
+    </style>
+
+    <section class="contact-section mb-5">
+
+        <div class="text-center mt-5 mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Kampus Afiliasi</h4>
+            <h1 class="display-5">Universitas Bhineka</h1>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Section -->
+                <div class="col-md-6 ml-5 text-center  wow fadeInLeft" data-wow-delay="0.2s">
+                    <img src="images/logo_ubhi.png" alt="Contact Form Image" class="contact-image" style="width: 60%;">
+                </div>
+                <!-- Info Section -->
+                <div class="col-md-6  wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="contact-info">
+                        <h6 class="text-primary my-3">Penjurusan</h6>
+                        <h1>S1 Pendidikan Kewarganegaraan</h1>
+                        <p>A working form with Ajax is a form that uses the Ajax (Asynchronous JavaScript and XML) technology to submit data to a web server without reloading the entire page. This allows for a more seamless and user-friendly experience as the user can submit data and receive feedback without interruption.</p>
+                        <a href="#" class="btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="text-center mt-5 mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Kampus Afiliasi</h4>
+            <h1 class="display-5">STAI Diponegoro</h1>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Info Section -->
+                <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="contact-info">
+                        <h6 class="text-primary my-4">Penjurusan</h6>
+                        <h1>S1 Penddidkan Agama Islam</h1>
+                        <p>A working form with Ajax is a form that uses the Ajax (Asynchronous JavaScript and XML) technology to submit data to a web server without reloading the entire page. This allows for a more seamless and user-friendly experience as the user can submit data and receive feedback without interruption.</p>
+                        <a href="#" class="btn-contact">Contact Us</a>
+                    </div>
+                </div>
+                <!-- Image Section -->
+                <div class="col-md-6 ml-5 text-center wow fadeInRight" data-wow-delay="0.2s">
+                    <img src="images/logo_stai_dipo.jpg" alt="Contact Form Image" class="contact-image" style="width: 60%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <?php
     // Memeriksa apakah ada error dalam array articlesMA
-if (isset($articlesMA['error'])) {
-    // Menampilkan pesan error jika ditemukan
-    echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
-    require 'footer.php';
-    exit();
-}
+    if (isset($articlesMA['error'])) {
+        // Menampilkan pesan error jika ditemukan
+        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
+        require 'footer.php';
+        exit();
+    }
     ?>
 
     <div class="container-fluid berita py-5">

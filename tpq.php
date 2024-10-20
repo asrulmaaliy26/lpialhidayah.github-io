@@ -51,11 +51,10 @@
     </div>
     <!-- Header End -->
     </div>
-    <!-- Navbar & Hero End -->
+    <!-- Navbar & Hero End -->  
     <a href="https://ppdb.almannan.id/" style="text-decoration: none;">
-        <div style="width: 100%; height: 100px; background-color: #343a40; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
-            -- --> PPDB <-- --
-                </div>
+        <div style="width: 100%; height: 100px; background: url('images/ppdb.png') no-repeat center center; background-size: cover; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
+        </div>
     </a>
 
 

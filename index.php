@@ -44,8 +44,8 @@
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
     ?>
-    
-    
+
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -55,7 +55,7 @@
     </div>
     <!-- Spinner End -->
 
-    
+
     <?php require 'navbar.php' ?>
 
     <!-- Carousel Start -->
@@ -117,10 +117,10 @@
         </div>
     </div>
     <a href="https://ppdb.almannan.id/" style="text-decoration: none;">
-        <div style="width: 100%; height: 100px; background-color: #343a40; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
-            -- --> PPDB <-- --
-                </div>
+        <div style="width: 100%; height: 100px; background: url('images/ppdb.png') no-repeat center center; background-size: cover; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
+        </div>
     </a>
+
 
 
     <!-- Carousel End -->
@@ -438,18 +438,18 @@
                 <div class="marquee">
                     <!-- Masukkan gambar atau logo di sini dan gandakan untuk efek infinite loop -->
                     <img src="images/LOGOLPI.png" alt="Logo 1">
-                    <img src="images/LOGOLPI.png" alt="Logo 2">
-                    <img src="images/LOGOLPI.png" alt="Logo 3">
-                    <img src="images/LOGOLPI.png" alt="Logo 4">
-                    <img src="images/LOGOLPI.png" alt="Logo 5">
+                    <img src="images/logoma.png" alt="Logo 2">
+                    <img src="images/logo_ubhi.png" alt="Logo 3">
+                    <img src="images/logo_stai_dipo.jpg" alt="Logo 4">
+                    <img src="images/logo_utama.jpg" alt="Logo 5">
                     <img src="images/LOGOLPI.png" alt="Logo 6">
 
                     <!-- Duplikat gambar untuk menghindari jeda animasi -->
                     <img src="images/LOGOLPI.png" alt="Logo 1">
-                    <img src="images/LOGOLPI.png" alt="Logo 2">
-                    <img src="images/LOGOLPI.png" alt="Logo 3">
-                    <img src="images/LOGOLPI.png" alt="Logo 4">
-                    <img src="images/LOGOLPI.png" alt="Logo 5">
+                    <img src="images/logoma.png" alt="Logo 2">
+                    <img src="images/logo_ubhi.png" alt="Logo 3">
+                    <img src="images/logo_stai_dipo.jpg" alt="Logo 4">
+                    <img src="images/logo_utama.jpg" alt="Logo 5">
                     <img src="images/LOGOLPI.png" alt="Logo 6">
                 </div>
             </div>
