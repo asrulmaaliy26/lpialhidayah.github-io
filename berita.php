@@ -83,6 +83,13 @@
     {
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
+    // Memeriksa apakah ada error dalam array articlesMA
+    if (isset($articlesMA['error'])) {
+        // Menampilkan pesan error jika ditemukan
+        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
+        require 'footer.php';
+        exit();
+    }
     ?>
 
     <div class="container">

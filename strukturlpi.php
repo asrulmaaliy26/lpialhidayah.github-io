@@ -40,11 +40,11 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Struktur Organisasi LPI</h4>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Struktur LPI</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">LPI</a></li>
-                <li class="breadcrumb-item active text-primary">Struktur Organisasi LPI</li>
+                <li class="breadcrumb-item active text-primary">Struktur LPI</li>
             </ol>
         </div>
     </div>
@@ -55,14 +55,11 @@
 
 
     <section>
-        <div class="container-fluid pt-5 pb-5 profil">
-            <div class="container pt-5 pb-5">
-                <div class="row">
-                    <div class="col-md-6 my-3 wow fadeInLeft" data-wow-delay="0.2s">
-                        <img src="images/strukturtatausaha.jpg" alt="Struktur Organisasi" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 my-3 wow fadeInRight" data-wow-delay="0.2s">
-                        <img src="images/strukturorganisasi.jpg" alt="Struktur Organisasi" class="img-fluid">
+        <div class="container-fluid pb-5 profil">
+            <div class="container pb-5">
+                <div class="row text-center">
+                    <div class="my-3 wow fadeInLeft" data-wow-delay="0.2s">
+                        <img src="images/strukturlpi.png" alt="Struktur Organisasi" class="img-fluid">
                     </div>
                 </div>
             </div>

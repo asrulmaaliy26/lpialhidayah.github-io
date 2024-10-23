@@ -68,7 +68,7 @@
                 <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="bg-primary rounded position-relative overflow-hidden">
                         <iframe style="padding: 20px;" width="100%" height="315"
-                            src="https://www.youtube.com/embed/1iDEgAOfr6k?si=OzusF-J7RLyTXTwm" frameborder="0"
+                            src="https://www.youtube.com/embed/UjwXqJlgPIY?si=nU9Nkxt3TEdml0Zs" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -106,8 +106,7 @@
                             <i class="fas fa-chalkboard-teacher  fa-4x text-primary"></i>
                         </div>
                         <h4>Total Pendidik</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <p class="mb-4">42
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -118,8 +117,7 @@
                             <i class="fas fa-university fa-4x text-primary"></i>
                         </div>
                         <h4>Total Siswa</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <p class="mb-4">634
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -130,8 +128,8 @@
                             <i class="fas fa-graduation-cap fa-4x text-primary"></i>
                         </div>
                         <h4>Total Alumni</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <p class="mb-4">0
+
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -142,8 +140,7 @@
                             <i class="fas fa-file-alt fa-4x text-primary"></i>
                         </div>
                         <h4>Total Pendaftar</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <p class="mb-4">0
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>

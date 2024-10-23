@@ -108,8 +108,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-chalkboard-teacher  fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Pendidik</h4>
-                        <p class="mb-4">100
+                        <h4>Pengajar Dipo</h4>
+                        <p class="mb-4">8
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -119,8 +119,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-university fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Siswa</h4>
-                        <p class="mb-4">100
+                        <h4>Total Mahasantri</h4>
+                        <p class="mb-4">27
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -130,8 +130,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-graduation-cap fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Alumni</h4>
-                        <p class="mb-4">100
+                        <h4>Pengajar UBHI</h4>
+                        <p class="mb-4">7
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -141,8 +141,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-file-alt fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Pendaftar</h4>
-                        <p class="mb-4">100
+                        <h4>Total Mahasantri</h4>
+                        <p class="mb-4">72
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>

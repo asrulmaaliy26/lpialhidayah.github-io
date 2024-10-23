@@ -55,7 +55,7 @@
                     <div class="dropdown-menu m-0 ">
                         <a href="visimisilpi.php" class="dropdown-item ">Profil & Visi Misi</a>
                         <a href="strukturlpi.php" class="dropdown-item ">Struktur Organisasi</a>
-                        <a href="akreditasilpi.php" class="dropdown-item ">Akreditasi</a>
+                        <!-- <a href="akreditasilpi.php" class="dropdown-item ">Akreditasi</a> -->
                         <a href="prestasilpi.php" class="dropdown-item ">Prestasi</a>
                     </div>
                 </div>

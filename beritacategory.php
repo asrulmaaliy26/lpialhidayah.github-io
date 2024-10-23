@@ -91,16 +91,17 @@
     </div>
 
     <?php
-
-    if (empty($posts_on_current_page)) {
-        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
-        require 'footer.php';
-        exit();
-    }
     // Fungsi untuk memotong teks
     function truncateContent($text, $maxLength)
     {
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
+    }
+    // Memeriksa apakah ada error dalam array articlesMA
+    if (isset($articlesCategory['error'])) {
+        // Menampilkan pesan error jika ditemukan
+        echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
+        require 'footer.php';
+        exit();
     }
     ?>
 

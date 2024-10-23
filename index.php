@@ -196,7 +196,7 @@
                 <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="bg-primary rounded position-relative overflow-hidden">
                         <iframe style="padding: 20px;" width="100%" height="315"
-                            src="https://www.youtube.com/embed/1iDEgAOfr6k?si=OzusF-J7RLyTXTwm" frameborder="0"
+                            src="https://www.youtube.com/embed/UjwXqJlgPIY?si=nU9Nkxt3TEdml0Zs" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -220,8 +220,7 @@
                             <i class="fas fa-chalkboard-teacher  fa-4x text-primary"></i>
                         </div>
                         <h4>Total Pendidik</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <p class="mb-4">150
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -231,9 +230,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-university fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Siswa</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <h4>Total Santri MA</h4>
+                        <p class="mb-4">396
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -243,9 +241,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-graduation-cap fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Alumni</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <h4>Total Santri Pondok</h4>
+                        <p class="mb-4">526
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -255,9 +252,8 @@
                         <div class="feature-icon p-4 mb-4">
                             <i class="fas fa-file-alt fa-4x text-primary"></i>
                         </div>
-                        <h4>Total Pendaftar</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
-                            pariatur...
+                        <h4>Total SMPT</h4>
+                        <p class="mb-4">634
                         </p>
                         <a class="btn btn-primary rounded-pill py-2 px-4" href="404.php">Learn More</a>
                     </div>
@@ -335,14 +331,14 @@
                             <div class="blog-img mb-4">
                                 <img src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid w-100 rounded" alt="">
                                 <div class="blog-title">
-                                    <a href="beritacategory.php?id=<?= $post['category_id'] ?>" class="btn"><?php echo $controller->getOneCategory($post['category_id']) ?></a>
+                                    <a href="beritacategory.php?id=<?= $post['pendidikan_id'] ?>" class="btn"><?php echo $controller->getOnePendidikan($post['pendidikan_id']) ?></a>
                                 </div>
                             </div>
                             <a href="404.php" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
                             <p class="mb-4"><?php echo truncateContent($post['article_content'], 200); ?>
                             </p>
                             <div class="d-flex align-items-center">
-                                <img src="images/logoma.png " class="img-fluid rounded-circle"
+                                <img src="images/LOGOLPI.png " class="img-fluid rounded-circle"
                                     style="width: 60px; height: 60px;" alt="">
                                 <div class="ms-3">
                                     <h5><?php echo $controller->getOnePendidikan($post['pendidikan_id']) ?> Al Hidayah</h5>
