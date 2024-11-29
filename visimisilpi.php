@@ -95,15 +95,17 @@
         </div>
     </section>
     <div class="container py-5">
-        <h1 class="text-center mb-4">Karakter Asthaguna</h1>
+        <h1 class="text-center mb-5 display-4">Karakter Asthaguna</h1>
 
         <div class="row">
             <!-- Qur'ani -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-success text-white">Qur'ani</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-success text-white d-flex align-items-center">
+                        <i class="bi bi-book-fill me-2"></i> Qur'ani
+                    </div>
                     <div class="card-body">
-                        <p>Pengemban Al-Qur’an, mahir membaca kitab suci Al-Qur’an dengan tartil, terampil menafsirkan, mengamalkan dan menghafalkan Al-Qur’an.</p>
+                        <p class="card-text">Pengemban Al-Qur’an, mahir membaca kitab suci Al-Qur’an dengan tartil, terampil menafsirkan, mengamalkan dan menghafalkan Al-Qur’an.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mampu wajiban minimal 5 juz per hari</li>
                             <li class="list-group-item">Mengikuti program one month, one juz</li>
@@ -116,10 +118,12 @@
 
             <!-- Agamis -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-info text-white">Agamis</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-info text-white d-flex align-items-center">
+                        <i class="bi bi-moon-stars-fill me-2"></i> Agamis
+                    </div>
                     <div class="card-body">
-                        <p>Kuat akidah ahlussunnah wal jamaah, beriman, bertaqwa dan istiqomah dalam ibadah.</p>
+                        <p class="card-text">Kuat akidah ahlussunnah wal jamaah, beriman, bertaqwa dan istiqomah dalam ibadah.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mengangkat tangan dan menjaharkan doa</li>
                             <li class="list-group-item">Memberi salam saat memasuki ruangan</li>
@@ -131,10 +135,12 @@
 
             <!-- Akhlaqul Karimah -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-warning text-dark">Akhlaqul Karimah</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-warning text-dark d-flex align-items-center">
+                        <i class="bi bi-heart-fill me-2"></i> Akhlaqul Karimah
+                    </div>
                     <div class="card-body">
-                        <p>Berakhlak mulia dan kuat dalam tawadhuk berdasarkan akhlak Qur’ani.</p>
+                        <p class="card-text">Berakhlak mulia dan kuat dalam tawadhuk berdasarkan akhlak Qur’ani.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Memberi salam dan menyalami Guru</li>
                             <li class="list-group-item">Berdiri ketika Guru masuk kelas</li>
@@ -147,10 +153,12 @@
 
             <!-- Kepemimpinan -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">Kepemimpinan</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white d-flex align-items-center">
+                        <i class="bi bi-award-fill me-2"></i> Kepemimpinan
+                    </div>
                     <div class="card-body">
-                        <p>Pemimpin masyarakat dalam keagamaan, cinta tanah air, memiliki jiwa kepemimpinan dan enterpreneurship.</p>
+                        <p class="card-text">Pemimpin masyarakat dalam keagamaan, cinta tanah air, memiliki jiwa kepemimpinan dan enterpreneurship.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Meletakkan sepatu di rak sepatu</li>
                             <li class="list-group-item">Mengikuti apel dan upacara dengan rapi</li>
@@ -162,10 +170,12 @@
 
             <!-- Sains -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-danger text-white">Sains</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-danger text-white d-flex align-items-center">
+                        <i class="bi bi-lightbulb-fill me-2"></i> Sains
+                    </div>
                     <div class="card-body">
-                        <p>Berprestasi dalam olimpiade, festival, dan lomba di berbagai tingkat.</p>
+                        <p class="card-text">Berprestasi dalam olimpiade, festival, dan lomba di berbagai tingkat.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mengikuti kegiatan Iqro' dan literasi</li>
                             <li class="list-group-item">Mengikuti kegiatan keilmuan dan praktek</li>
@@ -176,10 +186,12 @@
 
             <!-- Berprestasi -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-secondary text-white">Berprestasi</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-secondary text-white d-flex align-items-center">
+                        <i class="bi bi-trophy-fill me-2"></i> Berprestasi
+                    </div>
                     <div class="card-body">
-                        <p>Menumbuhkan rasa keingintahuan tinggi terhadap ilmu pengetahuan dan teknologi.</p>
+                        <p class="card-text">Menumbuhkan rasa keingintahuan tinggi terhadap ilmu pengetahuan dan teknologi.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mengikuti kegiatan ekstrakurikuler</li>
                             <li class="list-group-item">Aktif dalam lomba dan mendukung teman</li>
@@ -190,10 +202,12 @@
 
             <!-- Multilingual -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-success text-white">Multilingual</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-success text-white d-flex align-items-center">
+                        <i class="bi bi-translate me-2"></i> Multilingual
+                    </div>
                     <div class="card-body">
-                        <p>Pemimpin terampil dalam berbahasa asing, seperti bahasa Inggris, Jawa Halus, dan Arab.</p>
+                        <p class="card-text">Pemimpin terampil dalam berbahasa asing, seperti bahasa Inggris, Jawa Halus, dan Arab.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mengikuti program multilingual dan menerapkannya dalam kehidupan sehari-hari</li>
                         </ul>
@@ -203,10 +217,12 @@
 
             <!-- Khidmat / Cinta Almamater -->
             <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-info text-white">Khidmat / Cinta Almamater</div>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-info text-white d-flex align-items-center">
+                        <i class="bi bi-people-fill me-2"></i> Khidmat / Cinta Almamater
+                    </div>
                     <div class="card-body">
-                        <p>Memiliki qiroh tinggi dalam khidmat di lembaga dan masyarakat dengan ilmu pesantren.</p>
+                        <p class="card-text">Memiliki qiroh tinggi dalam khidmat di lembaga dan masyarakat dengan ilmu pesantren.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Menghafal visi dan misi sekolah</li>
                             <li class="list-group-item">Menghafal mars dan hymne sekolah</li>
