@@ -62,7 +62,6 @@
     exit();
   }
   ?>
-
   <section style="position: relative; text-align: center;">
     <img width="100%" style="height: 500px; object-fit: cover; filter: brightness(50%);" src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" alt="Article Image">
     <!-- Wrapper for text above the image -->
@@ -123,5 +122,6 @@
       </div>
     </div>
   </div>
+</div>
 
   <?php require 'footer.php'; ?>

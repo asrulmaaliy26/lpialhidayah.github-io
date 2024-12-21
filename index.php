@@ -300,7 +300,16 @@
                                         </div>
                                         <div class="col-md-5">
                                             <h1 class="display-5 mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></h1>
-                                            <p class="mb-4"><?php echo truncateContent($post['article_content'], 200); ?>...</p>
+                                            <p class="mb-4">
+                                                <?php 
+                                                    // Deteksi apakah konten memiliki gambar menggunakan regex
+                                                    if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                                        echo "Lihat gambar selengkapnya";
+                                                    } else {
+                                                        echo truncateContent($post['article_content'], 200);
+                                                    }
+                                                ?>
+                                            </p>
                                             <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo htmlspecialchars($post['article_id'], ENT_QUOTES, 'UTF-8'); ?>">Learn More</a>
                                         </div>
                                     </div>
@@ -321,7 +330,6 @@
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Our Blog & News</h4>
                 <h1 class="display-5 mb-4 text-white">Kegiatan Terkini Madrasah</h1>
-
             </div>
             <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
 
@@ -335,10 +343,18 @@
                                 </div>
                             </div>
                             <a href="404.php" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
-                            <p class="mb-4"><?php echo truncateContent($post['article_content'], 200); ?>
+                            <p class="mb-4">
+                                <?php 
+                                    // Deteksi apakah konten memiliki gambar menggunakan regex
+                                    if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                        echo "Lihat gambar selengkapnya";
+                                    } else {
+                                        echo truncateContent($post['article_content'], 200);
+                                    }
+                                ?>
                             </p>
                             <div class="d-flex align-items-center">
-                                <img src="images/LOGOLPI.png " class="img-fluid rounded-circle"
+                                <img src="images/LOGOLPI.png" class="img-fluid rounded-circle"
                                     style="width: 60px; height: 60px;" alt="">
                                 <div class="ms-3">
                                     <h5><?php echo $controller->getOnePendidikan($post['pendidikan_id']) ?> Al Hidayah</h5>
@@ -354,6 +370,7 @@
         </div>
     </div>
     <!-- Blog End -->
+
 
     <section class="testimonials text-center">
         <!-- Testimonial Start -->

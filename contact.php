@@ -28,6 +28,17 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+    .btn-hover-effect {
+        transition: all 0.3s ease-in-out; /* Efek transisi halus */
+    }
+
+    .btn-hover-effect:hover {
+        background-color: #0056b3; /* Warna tombol saat hover */
+        transform: scale(1.1); /* Membesarkan tombol saat hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambah bayangan */
+    }
+</style>
 </head>
 
 <body>
@@ -43,13 +54,12 @@
                     <?php
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $contactData = [
-                            'contact_id' => 1,
                             'name' => $_POST['name'],
                             'email' => $_POST['email'],
                             'pendidikan' => $_POST['pendidikan'],
                             'subject' => $_POST['subject'],
                             'message' => $_POST['message'],
-                            'created_at' => date('Y-m-d\TH:i:s.000  000Z'),
+                            'created_at' => date('Y-m-d\TH:i:s.000000Z'),
                             'updated_at' => date('Y-m-d\TH:i:s.000000Z'),
                         ];
 
@@ -85,9 +95,16 @@
     <!-- Contact Start -->
     <div class="container-fluid contact py-5">
         <div class="container py-5">
-            <div class="row g-5">
+                <div class="row g-5">
                 <div class="col-xl-6">
                     <div class="wow fadeInUp" data-wow-delay="0.2s">
+
+                        <div class="text-center mb-4">
+                        <a href="https://lpi.maalhidayahkauman.sch.id/kunjungantamu.php" 
+                        class="btn btn-primary btn-lg px-5 py-3 btn-hover-effect">
+                            Form Kunjungnan Tamu
+                            </a>
+                        </div>
                         <div class="bg-light rounded p-5 mb-5">
                             <h4 class="text-primary mb-4">Menghubungi</h4>
                             <div class="row g-4">
@@ -139,7 +156,7 @@
                             </div>
                         </div>
                         <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
-                            <h4 class="text-primary">Kirim Pesan Anda di Sini</h4>
+                            <h4 class="text-primary">Kirim Pesan / Aduan Anda di Sini</h4>
                             <p class="mb-4">Silakan isi formulir di bawah ini untuk pertanyaan atau bantuan lebih lanjut. Kami akan segera menanggapi pesan Anda. Terima kasih.</p>
                             <form method="POST" action="">
                                 <div class="row g-4">
