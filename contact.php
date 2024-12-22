@@ -106,55 +106,67 @@
                             </a>
                         </div>
                         <div class="bg-light rounded p-5 mb-5">
-                            <h4 class="text-primary mb-4">Menghubungi</h4>
+                            <h4 class="text-primary mb-4">Pengaduan dan Saran</h4>
                             <div class="row g-4">
                                 <div class="col-md-6">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
                                             <i class="fas fa-map-marker-alt fa-2x"></i>
                                         </div>
-                                        <div>
-                                            <h4>Alamat</h4>
-                                            <p class="mb-0">Jl. KH Hasyim Asyari No.54, Kauman, Kec. Kauman, Kabupaten Tulungagung, Jawa Timur 66261</p>
-                                        </div>
+                                        <h4>Alamat</h4>
+                                        
                                     </div>
+                                    <p class="mb-0">Jl. KH Hasyim Asyari No.54, Kauman, Kec. Kauman, Kabupaten Tulungagung, Jawa Timur 66261</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fas fa-envelope fa-2x"></i>
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
+                                            <i class="fas fa-tshirt fa-2x"></i> <!-- Ikon Laundry -->
                                         </div>
-                                        <div>
-                                            <h4>Kirim Email Ke</h4>
-                                            <p class="mb-0">lpialhidayahkauman@gmail.com</p>
-                                        </div>
+                                        <h4>Laundry</h4>
                                     </div>
+                                    <p class="medium">WA: <a href="https://wa.me/+6287722318051">Bu Riris: +62 877‑2231‑8051</a></p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fa fa-phone-alt fa-2x"></i>
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
+                                            <i class="fas fa-school fa-2x"></i> <!-- Ikon SMP -->
                                         </div>
-                                        <div>
-                                            <h4>Telephone</h4>
-                                            <p class="small"><a href="https://wa.me/+6282234639615">(0822) 34639615</a></p>
-                                        </div>
+                                        <h4>SMP</h4>
                                     </div>
+                                    <p class="medium">WA Bisnis: <a href="https://wa.me/+628563568978">Bu Latifah: +62 856‑3568‑978</a></p>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-add-item">
-                                        <div class="contact-icon text-primary mb-4">
-                                            <i class="fab fa-firefox-browser fa-2x"></i>
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
+                                            <i class="fas fa-graduation-cap fa-2x"></i> <!-- Ikon MA -->
                                         </div>
-                                        <div>
-                                            <h4>Jadwal Aktif Kunjung</h4>
-                                            <p class="small">Senin - Jumat: 7:00 - 16:00</p>
-                                            <p class="small">Sabtu: 8:00 - 12:00</p>
-                                        </div>
+                                        <h4>MA</h4>
                                     </div>
+                                    <p class="medium">WA Bisnis: <a href="https://wa.me/08563559078">Bu Mei: 0856‑355‑9078</a></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
+                                            <i class="fas fa-mosque fa-2x"></i> <!-- Ikon Pondok -->
+                                        </div>
+                                        <h4>Pondok</h4>
+                                    </div>
+                                    <p class="medium">WA Bisnis: <a href="https://wa.me/085732189755">Bu Lia: 0857‑3218‑9755</a></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-add-item d-flex align-items-center mb-3">
+                                        <div class="contact-icon text-primary me-3">
+                                            <i class="fas fa-laptop-code fa-2x"></i> <!-- Ikon IT -->
+                                        </div>
+                                        <h4>IT</h4>
+                                    </div>
+                                    <p class="medium">WA Bisnis: <a href="https://wa.me/085730488236">Bu Ina: 0857‑3048‑8236</a></p>
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
                             <h4 class="text-primary">Kirim Pesan / Aduan Anda di Sini</h4>
                             <p class="mb-4">Silakan isi formulir di bawah ini untuk pertanyaan atau bantuan lebih lanjut. Kami akan segera menanggapi pesan Anda. Terima kasih.</p>
