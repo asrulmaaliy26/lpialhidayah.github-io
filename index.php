@@ -136,8 +136,8 @@
                     <div class="image-container">
                         <div class="arrow-right">
                             <span class="arrow-text">←</span>
-                        </div>
-                        <img class="mb-5" src="images/LOGOLPI.png" alt="" style="width: 200px; height: 200px;">
+                        </div><a href="https://ppdb.almannan.id/"><img class="mb-5" src="images/LOGOLPI.png" alt="" style="width: 200px; height: 200px;"></a>
+                        
                         <div class="arrow-left">
                             <span class="arrow-text">→</span>
                         </div>
@@ -342,7 +342,7 @@
                                     <a href="beritacategory.php?id=<?= $post['pendidikan_id'] ?>" class="btn"><?php echo $controller->getOnePendidikan($post['pendidikan_id']) ?></a>
                                 </div>
                             </div>
-                            <a href="404.php" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
+                            <a href="detail.php?id=<?php echo htmlspecialchars($post['article_id'], ENT_QUOTES, 'UTF-8'); ?>" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
                             <p class="mb-4">
                                 <?php 
                                     // Deteksi apakah konten memiliki gambar menggunakan regex

@@ -163,7 +163,18 @@
     $offset = ($current_page - 1) * $posts_per_page;
 
     // Mendapatkan semua post dan menyortirnya secara ascending berdasarkan ID
-    $articlesMA = $controller->getArticleByOneTypes('pendidikan', '2');
+    $articlesType2 = $controller->getArticleByOneTypes('pendidikan', '2');
+    $articlesType1 = $controller->getArticleByOneTypes('pendidikan', '1');
+
+    // Menggabungkan artikel dari kedua tipe
+    $articlesMA = array_merge($articlesType2, $articlesType1);
+
+    // print_r($articlesMA);
+
+    // Mengurutkan artikel berdasarkan tanggal 'created_at'
+    usort($articlesMA, function ($a, $b) {
+        return strtotime($b['created_at']) - strtotime($a['created_at']);
+    });
     $getCategiry = $controller->getCategory();
 
     // Mendapatkan jumlah total post
@@ -201,7 +212,16 @@
                                 </div>
                                 <div class="rounded-bottom p-4">
                                     <a href="detail.php?id=<?php echo $post['article_id']; ?>" class="h4 d-inline-block mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
-                                    <p class="mb-4"><?php echo truncateContent($post['article_content'], 100); ?></p>
+                                    <p class="mb-4">
+                                        <?php 
+                                            // Deteksi apakah konten memiliki gambar menggunakan regex
+                                            if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                                echo "Lihat gambar selengkapnya";
+                                            } else {
+                                                echo truncateContent($post['article_content'], 100);
+                                            }
+                                        ?>
+                                    </p>
                                     <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo $post['article_id']; ?>">Learn More</a>
                                 </div>
                             </div>

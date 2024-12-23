@@ -163,12 +163,19 @@
     // Menghitung offset untuk query
     $offset = ($current_page - 1) * $posts_per_page;
 
-    // Mendapatkan semua post dan menyortirnya secara ascending berdasarkan ID
-    $articlesMA = $controller->getArticleByOneTypes('pendidikan', '6');
-    $getCategiry = $controller->getCategory();
+    // Mendapatkan artikel berdasarkan tipe '6' dan '1'
+    $articlesType6 = $controller->getArticleByOneTypes('pendidikan', '6') ?? [];
+    $articlesType1 = $controller->getArticleByOneTypes('pendidikan', '1') ?? [];
 
-    // Mendapatkan jumlah total post
+    // Menggabungkan artikel dari kedua tipe
+    $articlesMA = array_merge($articlesType6, $articlesType1);
+
+    // Mendapatkan kategori
+    $getCategory = $controller->getCategory();
+
+    // Menghitung jumlah total post
     $total_posts = count($articlesMA);
+
 
     // Memotong array berdasarkan halaman yang aktif
     $posts_on_current_page = array_slice($articlesMA, $offset, $posts_per_page);
@@ -286,7 +293,16 @@
                                 </div>
                                 <div class="rounded-bottom p-4">
                                     <a href="detail.php?id=<?php echo $post['article_id']; ?>" class="h4 d-inline-block mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
-                                    <p class="mb-4"><?php echo truncateContent($post['article_content'], 100); ?></p>
+                                    <p class="mb-4">
+                                        <?php 
+                                            // Deteksi apakah konten memiliki gambar menggunakan regex
+                                            if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                                echo "Lihat gambar selengkapnya";
+                                            } else {
+                                                echo truncateContent($post['article_content'], 100);
+                                            }
+                                        ?>
+                                    </p>
                                     <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo $post['article_id']; ?>">Learn More</a>
                                 </div>
                             </div>
