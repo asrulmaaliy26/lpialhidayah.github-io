@@ -22,86 +22,118 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <script>
-        // Fungsi untuk menonaktifkan tombol setelah diklik
-        function disableSubmitButton() {
-            document.getElementById("submitBtn").disabled = true;
-            document.getElementById("submitBtn").value = "Sedang memproses...";
-        }
-    </script>
-
     <style>
-        .btn-hover-effect {
-            transition: all 0.3s ease-in-out;
-        }
+    .btn-hover-effect {
+        transition: all 0.3s ease-in-out; /* Efek transisi halus */
+    }
 
-        .btn-hover-effect:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .col-form-label {
-            font-weight: bold;
-        }
-
-        .tabs-container {
-            margin-top: 30px;
-        }
-
-        .nav-tabs .nav-item .nav-link {
-            border-radius: 0;
-            padding: 10px 20px;
-        }
-
-        .tab-content {
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .table-responsive {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-    </style>
+    .btn-hover-effect:hover {
+        background-color: #0056b3; /* Warna tombol saat hover */
+        transform: scale(1.1); /* Membesarkan tombol saat hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambah bayangan */
+    }
+</style>
 </head>
 
 <body>
 
     <?php require 'navbar.php' ?>
     <?php require 'data.php' ?>
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <!-- Pesan akan diganti secara dinamis dengan PHP -->
+                    <?php
+                        // Menambahkan array sesi dengan tanggal dan jam
+                        $sessions = [
+                            1 => ['date' => '18 Januari 2025', 'time' => '09.00 - 11.00'],
+                            2 => ['date' => '18 Januari 2025', 'time' => '13.00 - 15.00'],
+                            3 => ['date' => '25 Januari 2025', 'time' => '09.00 - 11.00'],
+                            4 => ['date' => '25 Januari 2025', 'time' => '13.00 - 15.00']
+                        ];
+
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            $session = $_POST['sesi']; // Mendapatkan sesi yang dipilih
+                            $total = $controller->countContactsByPendidikanAndSubject('kunjunganwali', $session);
+                        
+                            // Cek apakah total antrean sudah mencapai 25
+                            if ($total >= 25) {
+                                echo '<script>alert("Pendaftaran untuk sesi ini sudah penuh. Silakan pilih sesi lain.");</script>';
+                            } else {
+                                $nomor = $total + 1;
+                        
+                                // Mengambil tanggal dan waktu sesuai sesi
+                                $tanggalSesi = $sessions[$session]['date'];
+                                $jamSesi = $sessions[$session]['time'];
+                        
+                                // Data yang dikirimkan
+                                $contactData = [
+                                    'contact_id' => 1,
+                                    'name' => $_POST['nama_siswa'] . ' - ' . $_POST['nama_ortu'],
+                                    'email' => $_POST['email'],
+                                    'pendidikan' => 'kunjunganwali',
+                                    'subject' => $_POST['sesi'],
+                                    'message' => 
+                                        "nomor antrian: " . $nomor . "," .
+                                        "nama siswa: " . $_POST['nama_siswa'] . "," .
+                                        "nama ortu: " . $_POST['nama_ortu'] . "," .
+                                        "jam: " . $jamSesi . "," .
+                                        "Tanggal: " . $tanggalSesi . "," .
+                                        "Keperluan: " . $_POST['keperluan'],
+                                    'created_at' => date('Y-m-d\TH:i:s.000000Z'),
+                                    'updated_at' => date('Y-m-d\TH:i:s.000000Z'),
+                                ];
+                        
+                                // Kirim data ke controller
+                                $response = $controller->sendContactData($contactData);
+                                if ($response) {
+                                    echo 'Pesan berhasil dikirim!';
+                                } else {
+                                    echo 'Terjadi kesalahan, silakan coba lagi.';
+                                }
+                            }
+                        }
+                        
+                    ?>
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Pendaftaran Kunjungan</h4>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Kunjungan dan Tamu</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">LPI</a></li>
-                <li class="breadcrumb-item active text-primary">Pendaftaran Kunjungan</li>
+                <li class="breadcrumb-item active text-primary">Contact</li>
             </ol>
         </div>
     </div>
+    <!-- Header End -->
+    </div>
+    <!-- Navbar & Hero End -->
 
     <!-- Contact Start -->
     <div class="container-fluid contact py-5">
         <div class="container py-5">
             <div class="wow fadeInUp" data-wow-delay="0.2s">
                 <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
-                    <h4 class="text-primary">Pendaftaran Kunjungan</h4>
-                    <p class="mb-4">Silakan isi formulir di bawah ini untuk mendaftar kunjungan. Kami akan segera mengonfirmasi pendaftaran Anda. Terima kasih.</p>
-                    <form method="POST" action="kunjunganwali/proses_daftar.php" onsubmit="disableSubmitButton()">
-                        <div class="row">
+                    <h4 class="text-primary">Kirim Pesan Anda di Sini</h4>
+                    <p class="mb-4">Silakan isi formulir di bawah ini untuk pertanyaan atau bantuan lebih lanjut. Kami akan segera menanggapi pesan Anda. Terima kasih.</p>
+                    <form method="POST" onsubmit="disableSubmitButton()">
+                        <div class="row mb-3">
                             <div class="col-md-6 form-group">
                                 <label for="nama_siswa" class="col-form-label">Nama Siswa</label>
                                 <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" required>
@@ -111,21 +143,20 @@
                                 <input type="text" class="form-control" id="nama_ortu" name="nama_ortu" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="tanggal" class="col-form-label">Tanggal Kunjungan</label>
-                            <select class="form-control" id="tanggal" name="tanggal" required>
-                                <option value="2025-01-18">18 Januari 2025</option>
-                                <option value="2025-01-25">25 Januari 2025</option>
-                            </select>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
                         </div>
-                        <div class="form-group">
-                            <label for="sesi" class="col-form-label">Sesi</label>
+                        <div class="form-group mb-3">
+                            <label for="sesi" class="col-form-label">Tanggal dan Sesi Kunjungan</label>
                             <select class="form-control" id="sesi" name="sesi" required>
-                                <option value="09.00 - 11.00">09.00 - 11.00</option>
-                                <option value="13.00 - 15.00">13.00 - 15.00</option>
+                                <option value="1">18 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="2">18 Januari 2025 - 13.00 - 15.00</option>
+                                <option value="3">25 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="4">25 Januari 2025 - 13.00 - 15.00</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="asrama" class="col-form-label">Asrama</label>
                             <select class="form-control" id="asrama" name="asrama" required>
                                 <option value="SMP Putra - Al Majid 2">SMP Putra - Al Majid 2</option>
@@ -133,36 +164,25 @@
                                 <option value="SMP & MA Putri - Asmah">SMP & MA Putri - Asmah</option>
                             </select>
                         </div>
+                        <div class="form-group mb-3">
+                            <label for="keperluan" class="form-label">keperluan</label>
+                            <textarea class="form-control" id="keperluan" name="keperluan" rows="5" required></textarea>
+                        </div>
                         <button id="submitBtn" type="submit" class="btn btn-primary">Daftar</button>
                     </form>
                 </div>
             </div>
-        
-
-            <div class="wow fadeInDown m-5" data-wow-delay="0.2s">
-                <?php 
-                
-                include 'tabel_antrian.php'; // Harus sesuaikan dengan sesi yang dipilih
-                ?>
-            </div>
-            
         </div>
     </div>
-    <!-- Contact End -->
-
-    <?php require 'footer.php' ?>
-
     <script>
-        // Membuat tab bekerja secara dinamis
-        const tabLinks = document.querySelectorAll('.nav-link');
-        tabLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                tabLinks.forEach(link => link.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
+        // Tampilkan toast setelah form dikirim
+        window.onload = function() {
+            <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+                var toastElement = document.getElementById('liveToast');
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            <?php endif; ?>
+        };
     </script>
-
-</body>
-
-</html>
+    <!-- Contact End -->
+    <?php require 'footer.php' ?>

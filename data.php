@@ -118,6 +118,44 @@ class HomepageController
 
         return null;
     }
+    // Method untuk mendapatkan tingkat
+    public function getContact()
+    {
+        $response = $this->fetchData('/contact');
+
+        // Memeriksa apakah data memiliki atribut 'contacts'
+        if (isset($response['contacts']) && is_array($response['contacts'])) {
+            return $response['contacts'];
+        }
+
+        throw new \Exception('Invalid data format received from API for contacts.');
+    }
+
+    public function countContacts()
+    {
+        $contacts = $this->getContact(); // Ambil array contacts
+        return count($contacts); // Hitung jumlah elemen di dalam array
+    }
+    
+    public function countContactsByPendidikanAndSubject($pendidikan, $subject)
+    {
+        try {
+            $contacts = $this->getContact(); // Ambil array contacts
+    
+            // Filter kontak dengan pendidikan dan subject sesuai kondisi
+            $filteredContacts = array_filter($contacts, function ($contact) use ($pendidikan, $subject) {
+                return isset($contact['pendidikan']) && $contact['pendidikan'] === $pendidikan 
+                    && isset($contact['subject']) && $contact['subject'] === $subject;
+            });
+    
+            // Hitung jumlah elemen hasil filter
+            return count($filteredContacts); // Jika kosong, akan otomatis mengembalikan 0
+        } catch (\Exception $e) {
+            // Tangani error dengan mengembalikan 0 sebagai fallback
+            return 0;
+        }
+    }
+
 
     // Method untuk mendapatkan artikel berdasarkan satu tipe
     public function getArticleByOneTypes($type, $typeSlug)
