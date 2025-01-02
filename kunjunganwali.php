@@ -82,11 +82,11 @@
                                     'pendidikan' => 'kunjunganwali',
                                     'subject' => $_POST['sesi'],
                                     'message' => 
-                                        "nomor antrian: " . $nomor . "," .
-                                        "nama siswa: " . $_POST['nama_siswa'] . "," .
-                                        "nama ortu: " . $_POST['nama_ortu'] . "," .
-                                        "jam: " . $jamSesi . "," .
-                                        "Tanggal: " . $tanggalSesi . "," .
+                                        "nomor antrian: " . $nomor . "\n" .
+                                        "nama siswa: " . $_POST['nama_siswa'] . "\n" .
+                                        "nama ortu: " . $_POST['nama_ortu'] . "\n" .
+                                        "jam: " . $jamSesi . "\n" .
+                                        "Tanggal: " . $tanggalSesi . "\n" .
                                         "Keperluan: " . $_POST['keperluan'],
                                     'created_at' => date('Y-m-d\TH:i:s.000000Z'),
                                     'updated_at' => date('Y-m-d\TH:i:s.000000Z'),
