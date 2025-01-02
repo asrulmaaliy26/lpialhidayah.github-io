@@ -66,7 +66,7 @@
                 <a href="smp.php" class="nav-item nav-link <?php echo $current_page == 'smp' ? 'active' : ''; ?>">SMP</a>
                 <a href="mahad.php" class="nav-item nav-link <?php echo $current_page == 'mahad' ? 'active' : ''; ?>">MAHAD</a>
                 <a href="tpq.php" class="nav-item nav-link <?php echo $current_page == 'tpq' ? 'active' : ''; ?>">TPQ</a>
-                <a href="contact.php" class="nav-item nav-link <?php echo in_array($current_page, ['contact', 'kunjungantamu']) ? 'active' : ''; ?>">Hubungi Kami</a>
+                <a href="contact.php" class="nav-item nav-link <?php echo in_array($current_page, ['contact', 'kunjungantamu', 'kunjunganwali']) ? 'active' : ''; ?>">Hubungi Kami</a>
             </div>
             <a href="https://ppdb.almannan.id/"
                 class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">PPDB</a>

@@ -100,6 +100,13 @@
                     <div class="wow fadeInUp" data-wow-delay="0.2s">
 
                         <div class="text-center mb-4">
+                        <a href="https://lpi.maalhidayahkauman.sch.id/kunjunganwali.php" 
+                        class="btn btn-primary btn-lg px-5 py-3 btn-hover-effect">
+                            Form Kunjungnan Calon Santri Baru
+                            </a>
+                        </div>
+
+                        <div class="text-center mb-4">
                         <a href="https://lpi.maalhidayahkauman.sch.id/kunjungantamu.php" 
                         class="btn btn-primary btn-lg px-5 py-3 btn-hover-effect">
                             Form Kunjungnan Tamu
