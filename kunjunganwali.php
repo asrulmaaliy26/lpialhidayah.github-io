@@ -130,8 +130,8 @@
         <div class="container py-5">
             <div class="wow fadeInUp" data-wow-delay="0.2s">
                 <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
-                    <h4 class="text-primary">Kirim Pesan Anda di Sini</h4>
-                    <p class="mb-4">Silakan isi formulir di bawah ini untuk pertanyaan atau bantuan lebih lanjut. Kami akan segera menanggapi pesan Anda. Terima kasih.</p>
+                    <h4 class="text-primary">Kirim Formulir Berikut ini </h4>
+                   
                     <form method="POST" onsubmit="disableSubmitButton()">
                         <div class="row mb-3">
                             <div class="col-md-6 form-group">
@@ -168,6 +168,8 @@
                             <label for="keperluan" class="form-label">keperluan</label>
                             <textarea class="form-control" id="keperluan" name="keperluan" rows="5" required></textarea>
                         </div>
+                        <p>Bagi yang tidak memiliki Email bisa hubungi kontak berikut :</p>
+                        <p class="medium mb-4">WA: <a href="https://wa.me/+628563559078">Bu Mei: +62 856-3559-078</a></p>
                         <button id="submitBtn" type="submit" class="btn btn-primary">Daftar</button>
                     </form>
                 </div>
