@@ -156,6 +156,42 @@ class HomepageController
         }
     }
 
+    public function countContactsByPendidikanSubjectAndAsrama($pendidikan, $subject, $asrama)
+    {
+        try {
+            $contacts = $this->getContact(); // Ambil array contacts
+
+            // Filter kontak berdasarkan pendidikan, subject, dan asrama
+            $filteredContacts = array_filter($contacts, function ($contact) use ($pendidikan, $subject, $asrama) {
+                // Ambil asrama dari field message
+                $messageAsrama = $this->extractAsramaFromMessage($contact['message'] ?? '');
+                
+                return isset($contact['pendidikan'], $contact['subject']) 
+                    && $contact['pendidikan'] === $pendidikan 
+                    && $contact['subject'] === $subject
+                    && $messageAsrama === $asrama;
+            });
+
+            // Hitung jumlah elemen hasil filter
+            return count($filteredContacts); // Jika kosong, akan otomatis mengembalikan 0
+        } catch (\Exception $e) {
+            // Tangani error dengan mengembalikan 0 sebagai fallback
+            return 0;
+        }
+    }
+
+    // Fungsi untuk mengekstrak asrama dari message
+    private function extractAsramaFromMessage($message)
+    {
+        // Cari asrama di dalam message dengan regex
+        $matches = [];
+        preg_match('/Asrama: (.+)/', $message, $matches);
+
+        // Jika ditemukan, kembalikan asrama, jika tidak, null
+        return $matches[1] ?? null;
+    }
+
+
 
     // Method untuk mendapatkan artikel berdasarkan satu tipe
     public function getArticleByOneTypes($type, $typeSlug)
