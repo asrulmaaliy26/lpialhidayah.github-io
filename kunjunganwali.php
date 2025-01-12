@@ -58,10 +58,10 @@
                     <?php
                     // Data sesi dengan tanggal dan jam
                     $sessions = [
-                        1 => ['date' => '18 Januari 2025', 'time' => '09.00 - 11.00'],
-                        2 => ['date' => '18 Januari 2025', 'time' => '13.00 - 15.00'],
-                        3 => ['date' => '25 Januari 2025', 'time' => '09.00 - 11.00'],
-                        4 => ['date' => '25 Januari 2025', 'time' => '13.00 - 15.00']
+                        1 => ['date' => '19 Januari 2025', 'time' => '09.00 - 11.00'],
+                        2 => ['date' => '19 Januari 2025', 'time' => '13.00 - 15.00'],
+                        3 => ['date' => '26 Januari 2025', 'time' => '09.00 - 11.00'],
+                        4 => ['date' => '26 Januari 2025', 'time' => '13.00 - 15.00']
                     ];
 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -155,10 +155,10 @@
                         <div class="form-group mb-3">
                             <label for="sesi" class="col-form-label">Tanggal dan Sesi Kunjungan</label>
                             <select class="form-control" id="sesi" name="sesi" required>
-                                <option value="1">18 Januari 2025 - 09.00 - 11.00</option>
-                                <option value="2">18 Januari 2025 - 13.00 - 15.00</option>
-                                <option value="3">25 Januari 2025 - 09.00 - 11.00</option>
-                                <option value="4">25 Januari 2025 - 13.00 - 15.00</option>
+                                <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option>
+                                <option value="3">26 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="4">26 Januari 2025 - 13.00 - 15.00</option>
                             </select>
                         </div>
                         <div class="form-group mb-3">
