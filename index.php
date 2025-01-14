@@ -137,7 +137,7 @@
                         <div class="arrow-right">
                             <span class="arrow-text">←</span>
                         </div><a href="https://ppdb.almannan.id/"><img class="mb-5" src="images/LOGOLPI.png" alt="" style="width: 200px; height: 200px;"></a>
-                        
+
                         <div class="arrow-left">
                             <span class="arrow-text">→</span>
                         </div>
@@ -301,13 +301,13 @@
                                         <div class="col-md-5">
                                             <h1 class="display-5 mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></h1>
                                             <p class="mb-4">
-                                                <?php 
-                                                    // Deteksi apakah konten memiliki gambar menggunakan regex
-                                                    if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
-                                                        echo "Lihat gambar selengkapnya";
-                                                    } else {
-                                                        echo truncateContent($post['article_content'], 200);
-                                                    }
+                                                <?php
+                                                // Deteksi apakah konten memiliki gambar menggunakan regex
+                                                if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                                    echo "Lihat gambar selengkapnya";
+                                                } else {
+                                                    echo truncateContent($post['article_content'], 200);
+                                                }
                                                 ?>
                                             </p>
                                             <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo htmlspecialchars($post['article_id'], ENT_QUOTES, 'UTF-8'); ?>">Learn More</a>
@@ -344,13 +344,13 @@
                             </div>
                             <a href="detail.php?id=<?php echo htmlspecialchars($post['article_id'], ENT_QUOTES, 'UTF-8'); ?>" class="h4 d-inline-block mb-3"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
                             <p class="mb-4">
-                                <?php 
-                                    // Deteksi apakah konten memiliki gambar menggunakan regex
-                                    if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
-                                        echo "Lihat gambar selengkapnya";
-                                    } else {
-                                        echo truncateContent($post['article_content'], 200);
-                                    }
+                                <?php
+                                // Deteksi apakah konten memiliki gambar menggunakan regex
+                                if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                    echo "Lihat gambar selengkapnya";
+                                } else {
+                                    echo truncateContent($post['article_content'], 200);
+                                }
                                 ?>
                             </p>
                             <div class="d-flex align-items-center">
@@ -372,8 +372,8 @@
     <!-- Blog End -->
 
 
-    <section class="testimonials text-center">
-        <!-- Testimonial Start -->
+    <!-- <section class="testimonials text-center">
+
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5" style="max-width: 500px;">
@@ -419,9 +419,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Tambahkan testimonial lainnya sesuai kebutuhan -->
                     </div>
-                    <!-- Controls -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
                         data-bs-slide="prev">
                         <span class="fa fa-arrow-left" aria-hidden="true"></span>
@@ -436,9 +434,21 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section class="testimonials text-center">
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                    <h1 class="display-6 mb-5">Masih dalam Pengerjaan</h1>
+                    <hr size="4px" style="color: var(--dark);">
+                    <p>Sedang dalam proses pembaruan. Silakan kembali lagi nanti untuk melihat pembaruan terbaru.</p>
+                </div>
+            </div>
+        </div>
         <!-- Testimonial End -->
     </section>
-
 
     <div class="container-fluid blog py-5">
         <div class="container pb-5">
