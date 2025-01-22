@@ -136,18 +136,18 @@ class HomepageController
         $contacts = $this->getContact(); // Ambil array contacts
         return count($contacts); // Hitung jumlah elemen di dalam array
     }
-    
+
     public function countContactsByPendidikanAndSubject($pendidikan, $subject)
     {
         try {
             $contacts = $this->getContact(); // Ambil array contacts
-    
+
             // Filter kontak dengan pendidikan dan subject sesuai kondisi
             $filteredContacts = array_filter($contacts, function ($contact) use ($pendidikan, $subject) {
-                return isset($contact['pendidikan']) && $contact['pendidikan'] === $pendidikan 
+                return isset($contact['pendidikan']) && $contact['pendidikan'] === $pendidikan
                     && isset($contact['subject']) && $contact['subject'] === $subject;
             });
-    
+
             // Hitung jumlah elemen hasil filter
             return count($filteredContacts); // Jika kosong, akan otomatis mengembalikan 0
         } catch (\Exception $e) {
@@ -165,9 +165,9 @@ class HomepageController
             $filteredContacts = array_filter($contacts, function ($contact) use ($pendidikan, $subject, $asrama) {
                 // Ambil asrama dari field message
                 $messageAsrama = $this->extractAsramaFromMessage($contact['message'] ?? '');
-                
-                return isset($contact['pendidikan'], $contact['subject']) 
-                    && $contact['pendidikan'] === $pendidikan 
+
+                return isset($contact['pendidikan'], $contact['subject'])
+                    && $contact['pendidikan'] === $pendidikan
                     && $contact['subject'] === $subject
                     && $messageAsrama === $asrama;
             });
@@ -179,6 +179,27 @@ class HomepageController
             return 0;
         }
     }
+
+    public function checkEmailAndPendidikan($email, $pendidikan)
+    {
+        try {
+            $contacts = $this->getContact(); // Ambil array contacts
+
+            // Filter kontak berdasarkan email dan pendidikan
+            $filteredContacts = array_filter($contacts, function ($contact) use ($email, $pendidikan) {
+                return isset($contact['email'], $contact['pendidikan'])
+                    && $contact['email'] === $email
+                    && $contact['pendidikan'] === $pendidikan;
+            });
+
+            // Jika ada kontak yang memenuhi kriteria, kembalikan true, jika tidak false
+            return !empty($filteredContacts);
+        } catch (\Exception $e) {
+            // Tangani error dengan mengembalikan false sebagai fallback
+            return false;
+        }
+    }
+
 
     // Fungsi untuk mengekstrak asrama dari message
     private function extractAsramaFromMessage($message)

@@ -10,6 +10,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="images/LOGOLPI.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
@@ -50,7 +51,7 @@
     <?php require 'navbar.php' ?>
     <?php require 'data.php' ?>
     <!-- Toast Container -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 20; margin-bottom: 100px;">
         <div id="liveToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
@@ -69,21 +70,22 @@
                         $asrama = $_POST['asrama']; // Mendapatkan asrama yang dipilih
                         $totalAsrama = $controller->countContactsByPendidikanSubjectAndAsrama('kunjunganwali', $session, $asrama);
 
+
                         // Cek apakah total antrean sudah mencapai 10 untuk asrama tersebut
                         if ($totalAsrama >= 15) {
-                            echo '<script>alert("Pendaftaran untuk sesi ini di asrama ' . $asrama . ' sudah penuh. Silakan pilih sesi atau asrama lain.");</script>';
+                            echo 'Pendaftaran untuk sesi ini di asrama ' . $asrama . ' sudah penuh. Silakan pilih sesi atau asrama lain';
                         } else {
                             $nomor = $totalAsrama + 1;
 
                             // Mengambil tanggal dan waktu sesuai sesi
                             $tanggalSesi = $sessions[$session]['date'];
                             $jamSesi = $sessions[$session]['time'];
-
+                            $email = $_POST['email'];
                             // Data yang dikirimkan
                             $contactData = [
                                 'contact_id' => 1,
                                 'name' => $_POST['nama_siswa'] . ' - ' . $_POST['nama_ortu'],
-                                'email' => $_POST['email'],
+                                'email' => $email,
                                 'pendidikan' => 'kunjunganwali',
                                 'subject' => $_POST['sesi'],
                                 'message' =>
@@ -98,12 +100,17 @@
                                 'updated_at' => date('Y-m-d\TH:i:s.000000Z'),
                             ];
 
-                            // Kirim data ke controller
-                            $response = $controller->sendContactData($contactData);
-                            if ($response) {
-                                echo 'Pesan berhasil dikirim!';
+                            $result = $controller->checkEmailAndPendidikan($email, 'kunjunganwali');
+                            if ($result) {
+                                echo 'Email ini sudah terdaftar , silahkan menunggu konfirmasi dari kami';
                             } else {
-                                echo 'Terjadi kesalahan, silakan coba lagi.';
+                                // Kirim data ke controller
+                                $response = $controller->sendContactData($contactData);
+                                if ($response) {
+                                    echo 'Pesan berhasil dikirim!';
+                                } else {
+                                    echo 'Terjadi kesalahan, silakan coba lagi.';
+                                }
                             }
                         }
                     }
