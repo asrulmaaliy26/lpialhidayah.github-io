@@ -155,8 +155,8 @@
                         <div class="form-group mb-3">
                             <label for="sesi" class="col-form-label">Tanggal dan Sesi Kunjungan</label>
                             <select class="form-control" id="sesi" name="sesi" required>
-                                <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
-                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option>
+                                <!-- <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option> -->
                                 <option value="3">26 Januari 2025 - 09.00 - 11.00</option>
                                 <option value="4">26 Januari 2025 - 13.00 - 15.00</option>
                             </select>
