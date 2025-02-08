@@ -139,7 +139,15 @@
 
     <!-- Contact Start -->
     <div class="container-fluid contact py-5">
-        <div class="container py-5">
+        <div class="container py-5" style="top: 0; left: 0; width: 100%; text-align: center;">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="text-danger text-center">Form ini sudah ditutup</h4>
+                    <p class="text-center">Pendaftaran kunjungan wali sudah ditutup. Terima kasih atas partisipasinya.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5" style="opacity: 0.3; pointer-events: none;">
             <div class="wow fadeInUp" data-wow-delay="0.2s">
                 <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
                     <h4 class="text-primary">Kirim Formulir Berikut ini </h4>
@@ -162,8 +170,8 @@
                         <div class="form-group mb-3">
                             <label for="sesi" class="col-form-label">Tanggal dan Sesi Kunjungan</label>
                             <select class="form-control" id="sesi" name="sesi" required>
-                                <!-- <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
-                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option> -->
+                                <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option>
                                 <option value="3">26 Januari 2025 - 09.00 - 11.00</option>
                                 <option value="4">26 Januari 2025 - 13.00 - 15.00</option>
                             </select>
@@ -188,6 +196,65 @@
             </div>
         </div>
     </div>
+    <!-- Formulir ditutup dengan tampilan transparan -->
+    <!-- <div class="container-fluid contact py-5" style="position: relative;">
+        <div class="container py-5" style="opacity: 0.3; pointer-events: none;">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="text-primary">Kirim Formulir Berikut ini </h4>
+                    <form method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="nama_siswa" class="col-form-label">Nama Siswa</label>
+                                <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="nama_ortu" class="col-form-label">Nama Orang Tua</label>
+                                <input type="text" class="form-control" id="nama_ortu" name="nama_ortu" required>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="sesi" class="col-form-label">Tanggal dan Sesi Kunjungan</label>
+                            <select class="form-control" id="sesi" name="sesi" required>
+                                <option value="1">19 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="2">19 Januari 2025 - 13.00 - 15.00</option>
+                                <option value="3">26 Januari 2025 - 09.00 - 11.00</option>
+                                <option value="4">26 Januari 2025 - 13.00 - 15.00</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="asrama" class="col-form-label">Asrama</label>
+                            <select class="form-control" id="asrama" name="asrama" required>
+                                <option value="SMP Putra - Al Majid 2">SMP Putra - Al Majid 2</option>
+                                <option value="MA Putra - Al Majid 1">MA Putra - Al Majid 1</option>
+                                <option value="SMP & MA Putri - Asmah">SMP & MA Putri - Asmah</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="keperluan" class="form-label">keperluan</label>
+                            <textarea class="form-control" id="keperluan" name="keperluan" rows="5" required></textarea>
+                        </div>
+                        <p>Bagi yang tidak memiliki Email bisa hubungi kontak berikut :</p>
+                        <p class="medium mb-4">WA: <a href="https://wa.me/+628563559078">Bu Mei: +62 856-3559-078</a></p>
+                        <button id="submitBtn" type="submit" class="btn btn-primary" disabled>Daftar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5" style="position: absolute; top: 0; left: 0; width: 100%; text-align: center;">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="text-danger text-center">Form ini sudah ditutup</h4>
+                    <p class="text-center">Pendaftaran kunjungan wali sudah ditutup. Terima kasih atas partisipasinya.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     <script>
         // Tampilkan toast setelah form dikirim
         window.onload = function() {
