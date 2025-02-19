@@ -115,13 +115,14 @@
                                             </div>
                                             <div class="col-md-6 mb-4">
                                                 <p class="mb-4">
-                                                    <?php 
-                                                        // Deteksi apakah konten memiliki gambar menggunakan regex
-                                                        if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
-                                                            echo "Lihat gambar selengkapnya";
-                                                        } else {
-                                                            echo truncateContent($post['article_content'], 200);
-                                                        }
+                                                    <?php
+                                                    // Deteksi apakah konten memiliki gambar menggunakan regex
+                                                    if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                                        echo "Lihat gambar selengkapnya";
+                                                    } else {
+                                                        $content = strip_tags($post['article_content'] ?? '');
+                                                        echo strlen($content) > 200 ? substr($content, 0, 200) . '...' : $content;
+                                                    }
                                                     ?>
                                                 </p>
                                             </div>
@@ -260,13 +261,14 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></h5>
                                     <p class="card-text">
-                                        <?php 
-                                            // Deteksi apakah konten memiliki gambar menggunakan regex
-                                            if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
-                                                echo "Lihat gambar selengkapnya";
-                                            } else {
-                                                echo truncateContent($post['article_content'], 20);
-                                            }
+                                        <?php
+                                        // Deteksi apakah konten memiliki gambar menggunakan regex
+                                        if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                            echo "Lihat gambar selengkapnya";
+                                        } else {
+                                            $content = strip_tags($post['article_content'] ?? '');
+                                            echo strlen($content) > 200 ? substr($content, 0, 200) . '...' : $content;
+                                        }
                                         ?>
                                     </p>
                                 </div>

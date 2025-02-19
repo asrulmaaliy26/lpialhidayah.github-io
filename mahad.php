@@ -52,7 +52,7 @@
     <!-- Header End -->
     </div>
     <!-- Navbar & Hero End -->
-      
+
     <a href="https://ppdb.almannan.id/" style="text-decoration: none;">
         <div style="width: 100%; height: 100px; background: url('images/ppdb.png') no-repeat center center; background-size: cover; color: white; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; transition: background-color 0.3s;">
         </div>
@@ -162,7 +162,7 @@
     // Menghitung offset untuk query
     $offset = ($current_page - 1) * $posts_per_page;
 
-    
+
     $articlesType6 = $controller->getArticleByOneTypes('pendidikan', '4') ?? [];
     $articlesType1 = $controller->getArticleByOneTypes('pendidikan', '1') ?? [];
 
@@ -207,13 +207,14 @@
                                 <div class="rounded-bottom p-4">
                                     <a href="detail.php?id=<?php echo $post['article_id']; ?>" class="h4 d-inline-block mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
                                     <p class="mb-4">
-                                        <?php 
-                                            // Deteksi apakah konten memiliki gambar menggunakan regex
-                                            if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
-                                                echo "Lihat gambar selengkapnya";
-                                            } else {
-                                                echo truncateContent($post['article_content'], 100);
-                                            }
+                                        <?php
+                                        // Deteksi apakah konten memiliki gambar menggunakan regex
+                                        if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
+                                            echo "Lihat gambar selengkapnya";
+                                        } else {
+                                            $content = strip_tags($post['article_content'] ?? '');
+                                            echo strlen($content) > 100 ? substr($content, 0, 100) . '...' : $content;
+                                        }
                                         ?>
                                     </p>
                                     <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo $post['article_id']; ?>">Learn More</a>

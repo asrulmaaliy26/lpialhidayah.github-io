@@ -49,7 +49,7 @@
   try {
     // Mengambil artikel berdasarkan ID
     $post = $controller->getOneArticle($post_id);
-    $articlesPaginasi = $controller->getArticlesPaginasi(2  );
+    $articlesPaginasi = $controller->getArticlesPaginasi(2);
   } catch (\Exception $e) {
     $error_message = 'Error: ' . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
     echo "<p>{$error_message}</p>";
@@ -111,7 +111,8 @@
                 <div class="card-body">
                   <h5 class="card-title"><?php echo htmlspecialchars($article['article_title'], ENT_QUOTES, 'UTF-8'); ?></h5>
                   <p class="card-text">
-                    <?php echo truncateText($article['article_content'], 50); ?>
+                    <?php $content = strip_tags($post['article_content'] ?? '');
+                    echo strlen($content) > 50 ? substr($content, 0, 50) . '...' : $content; ?>
                   </p>
                 </div>
               </div>
@@ -123,6 +124,6 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 
   <?php require 'footer.php'; ?>

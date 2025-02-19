@@ -117,7 +117,8 @@
                                 </div>
                                 <div class="rounded-bottom p-4">
                                     <a href="detail.php?id=<?php echo $post['article_id']; ?>" class="h4 d-inline-block mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></a>
-                                    <p class="mb-4"><?php echo truncateContent($post['article_content'], 100); ?></p>
+                                    <p class="mb-4"><?php $content = strip_tags($post['article_content'] ?? '');
+                                                    echo strlen($content) > 100 ? substr($content, 0, 100) . '...' : $content; ?></p>
                                     <a class="btn btn-primary rounded-pill py-2 px-4" href="detail.php?id=<?php echo $post['article_id']; ?>">Learn More</a>
                                 </div>
                             </div>
