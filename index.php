@@ -306,7 +306,8 @@
                                                 if (preg_match('/<img[^>]*>/i', $post['article_content'])) {
                                                     echo "Lihat gambar selengkapnya";
                                                 } else {
-                                                    echo truncateContent($post['article_content'], 200);
+                                                    $content = strip_tags($post['article_content'] ?? '');
+                                                    echo strlen($content) > 200 ? substr($content, 0, 200) . '...' : $content;
                                                 }
                                                 ?>
                                             </p>
@@ -324,6 +325,7 @@
     </div>
     <!-- Offer End -->
 
+    
     <!-- Blog Start -->
     <div class="container-fluid blog py-4" style="background-color:#343a40;">
         <div class="container pb-5">
