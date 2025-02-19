@@ -111,7 +111,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><?php echo htmlspecialchars($article['article_title'], ENT_QUOTES, 'UTF-8'); ?></h5>
                   <p class="card-text">
-                    <?php $content = strip_tags($post['article_content'] ?? '');
+                    <?php $content = strip_tags($article['article_content'] ?? '');
                     echo strlen($content) > 50 ? substr($content, 0, 50) . '...' : $content; ?>
                   </p>
                 </div>
