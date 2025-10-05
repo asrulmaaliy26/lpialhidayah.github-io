@@ -200,7 +200,7 @@
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating custom-select-arrow">
                                             <?php
-                                            $apiUrl = 'https://admin.lpialhidayah.or.id/api/pendidikans';
+                                            $apiUrl = 'https://blog.lpialhidayah.or.id/api/pendidikans';
                                             $pendidikanData = json_decode(file_get_contents($apiUrl), true);
                                             ?>
                                             <select class="form-control border-0" id="pendidikan" name="pendidikan">

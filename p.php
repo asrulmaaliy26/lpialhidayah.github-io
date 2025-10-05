@@ -1,7 +1,7 @@
 <?php
 // URL untuk login dan dashboard
-$loginUrl = "https://admin.lpialhidayah.or.id/admin/login";
-$dashboardUrl = "https://admin.lpialhidayah.or.id/admin";
+$loginUrl = "https://blog.lpialhidayah.or.id/admin/login";
+$dashboardUrl = "https://blog.lpialhidayah.or.id/admin";
 
 // Inisialisasi session cURL
 $ch = curl_init();

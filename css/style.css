@@ -399,7 +399,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(https://admin.lpialhidayah.or.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php);
+    url(https://blog.lpialhidayah.or.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1114,6 +1114,14 @@
   align-items: center;
   white-space: nowrap;
   animation: scroll-left 30s linear infinite; /* Durasi animasi */
+}
+
+img {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+img[src] {
+  opacity: 1;
 }
 
 .marquee img {
