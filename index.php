@@ -61,7 +61,7 @@
     <!-- Carousel Start -->
     <div class="header-carousel owl-carousel">
         <div class="header-carousel-item">
-            <img src="https://admin.maalhidayahkauman.sch.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php"
+            <img src="https://admin.lpialhidayah.or.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php"
                 class="img-fluid w-100" alt="Image">
             <div class="carousel-caption">
                 <div class="container">
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="header-carousel-item">
-            <img src="https://admin.maalhidayahkauman.sch.id/uploads/articleimage/haflah-tasyakuran-purna-siswa-kelas-xii_20240827_163334.jpg?page=index.php"
+            <img src="https://admin.lpialhidayah.or.id/uploads/articleimage/haflah-tasyakuran-purna-siswa-kelas-xii_20240827_163334.jpg?page=index.php"
                 class="img-fluid w-100" alt="Image">
             <div class="carousel-caption">
                 <div class="container">

@@ -2,7 +2,7 @@
 
 class HomepageController
 {
-    public $uri = 'https://admin.maalhidayahkauman.sch.id/api';
+    public $uri = 'https://blog.lpialhidayah.or.id/api';
 
     // Method untuk menampilkan semua artikel
     public function index()
@@ -279,7 +279,7 @@ class HomepageController
     }
     function sendContactData($contactData)
     {
-        $url = 'https://admin.maalhidayahkauman.sch.id/api/contact';
+        $url = 'https://admin.lpialhidayah.or.id/api/contact';
         // $url = 'http://127.0.0.1:8000/api/contact';
 
         $options = [
