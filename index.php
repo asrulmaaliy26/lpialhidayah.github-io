@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" /> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -61,8 +61,8 @@
     <!-- Carousel Start -->
     <div class="header-carousel owl-carousel">
         <div class="header-carousel-item">
-            <img src="https://blog.lpialhidayah.or.id/uploads/articleimage/masa-taaruf-siswa-madrasah_20240827_163702.jpg?page=index.php"
-                class="img-fluid w-100" alt="Image">
+            <img src="https://blog.lpialhidayah.or.id/uploads/articleimage/apel-matsama-2025_20250714_093734.jpg?page=index.php"
+                class="img-fluid w-100" alt="Image" loading="lazy">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row g-5">
@@ -89,7 +89,7 @@
         </div>
         <div class="header-carousel-item">
             <img src="https://blog.lpialhidayah.or.id/uploads/articleimage/haflah-tasyakuran-purna-siswa-kelas-xii_20240827_163334.jpg?page=index.php"
-                class="img-fluid w-100" alt="Image">
+                class="img-fluid w-100" alt="Image" loading="lazy">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row gy-0 gx-5">
@@ -296,7 +296,7 @@
                                 <div id="collapse<?php echo $i; ?>" class="tab-pane fade <?php echo ($i === 1) ? 'show p-0 active' : 'p-0'; ?>">
                                     <div class="row g-4">
                                         <div class="col-md-7">
-                                            <img src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid w-100 rounded" alt="Article Image">
+                                            <img src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid w-100 rounded" alt="Article Image" loading="lazy">
                                         </div>
                                         <div class="col-md-5">
                                             <h1 class="display-5 mb-4"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></h1>

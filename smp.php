@@ -167,21 +167,21 @@
     $articlesType1 = $controller->getArticleByOneTypes('pendidikan', '1');
 
     // Menggabungkan artikel dari kedua tipe
-    $articlesMA = array_merge($articlesType2, $articlesType1);
+    $articlesSMP = array_merge($articlesType2, $articlesType1);
 
-    // print_r($articlesMA);
+    // print_r($articlesSMP);
 
     // Mengurutkan artikel berdasarkan tanggal 'created_at'
-    usort($articlesMA, function ($a, $b) {
+    usort($articlesSMP, function ($a, $b) {
         return strtotime($b['created_at']) - strtotime($a['created_at']);
     });
     $getCategiry = $controller->getCategory();
 
     // Mendapatkan jumlah total post
-    $total_posts = count($articlesMA);
+    $total_posts = count($articlesSMP);
 
     // Memotong array berdasarkan halaman yang aktif
-    $posts_on_current_page = array_slice($articlesMA, $offset, $posts_per_page);
+    $posts_on_current_page = array_slice($articlesSMP, $offset, $posts_per_page);
 
     // Menghitung jumlah halaman yang diperlukan
     $total_pages = ceil($total_posts / $posts_per_page);
@@ -191,8 +191,8 @@
     {
         return strlen($text) > $maxLength ? substr($text, 0, $maxLength) . '...' : $text;
     }
-    // Memeriksa apakah ada error dalam array articlesMA
-    if (isset($articlesMA['error'])) {
+    // Memeriksa apakah ada error dalam array articlesSMP
+    if (isset($articlesSMP['error'])) {
         // Menampilkan pesan error jika ditemukan
         echo '<p class="text-center m-5">Article tidak ditemukan.</p>';
         require 'footer.php';

@@ -88,7 +88,20 @@
             <h4 class="text-center pt-5"><?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?></h4>
             <p class="text-center text-muted mb-5"><em><?php echo date('F j, Y', strtotime($post['created_at'] ?? 'now')); ?></em></p>
             <img class="mb-5" style="width: 80%; border-radius: 10px; display: block; margin: auto" src="<?php echo htmlspecialchars($post['article_image'], ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($post['article_title'], ENT_QUOTES, 'UTF-8'); ?>" />
-            <p><?php echo $post['article_content']; ?></p>
+            <p>
+                <?php
+                    $content = $post['article_content'];
+                    
+                    // Tambahkan class dan style langsung ke setiap tag <img> yang belum punya class/style
+                    $content = preg_replace(
+                        '/<img(?![^>]*style=)/i',
+                        '<img style="max-width:300px; height:auto; display:block; margin:auto; border-radius:10px;"',
+                        $content
+                    );
+                    
+                    echo $content;
+                ?>
+            </p>
 
             <p class="text-center text-muted mt-5">
               <em><?php echo date('F j, Y', strtotime($post['created_at'] ?? 'now')); ?> | By: <?php echo !empty($post['article_author']) ? htmlspecialchars($post['article_author'], ENT_QUOTES, 'UTF-8') : '-'; ?></em>
